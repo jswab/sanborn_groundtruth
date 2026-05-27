@@ -400,15 +400,13 @@ function loadSheet(s){
   const imgUrl=s.loc_clean_url||s.annotated_url;
   if(!s.loc_clean_url)toast('LOC image unavailable — showing annotated fallback');
 
-  showLoad(true);let loaded=0,retried=false;
-  function onO(){if(++loaded>=2)showLoad(false);}
-  function onFail(){
-    if(!retried&&s.annotated_url&&imgUrl!==s.annotated_url){
-      retried=true;
-      if(osdA)osdA.open({type:'image',url:s.annotated_url});
-      if(osdC)osdC.open({type:'image',url:s.annotated_url});
-    }else{showLoad(false);toast('Map image failed to load','er');}
-  }
+  showLoad(true);let loaded=0,errShown=false;
+  function onO(){if(++loaded>=2){clearTimeout(slowTimer);showLoad(false);}}
+  function onFail(){if(!errShown){errShown=true;clearTimeout(slowTimer);showLoad(false);toast('Image failed to load — no clean map available for this sheet','er');}}
+  const slowTimer=setTimeout(()=>{
+    const lb=document.querySelector('.lbox2');
+    if(lb)lb.childNodes[0].textContent='Still loading… large image';
+  },8000);
 
   osdA=OpenSeadragon({element:elA,...common,tileSources:{type:'image',url:imgUrl}});
   osdC=OpenSeadragon({element:elC,...common,tileSources:{type:'image',url:imgUrl}});
