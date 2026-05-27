@@ -196,7 +196,7 @@ textarea#notes:focus{border-color:var(--rust)}
 <div id="toast"></div>
 <script src="config.js"></script>
 <script>
-const APP_VERSION='v1.2';
+const APP_VERSION='v1.3';
 const APP_UPDATED='2026-05-27T00:00:00';
 let manifest=[],cur=null,markers=[],marking=true,synced=true,syncLock=false,flagged=false;
 let osdA=null,osdC=null,sessRev=0,sessSk=0,user=null;
@@ -270,18 +270,17 @@ function updateProg(st){
 }
 
 function loadSheet(s){
+  // Capture parent refs before destroying (destroy() may remove the child elements)
+  const mconA=document.querySelector('.mpanel .mcon');
+
   if(osdA){osdA.destroy();osdA=null;}
   if(osdC){osdC.destroy();osdC=null;}
 
-  // destroy() removes the container elements from the DOM — recreate them only when needed
-  if(!document.getElementById('osd-a')){
-    const elA=document.createElement('div');elA.id='osd-a';elA.className='osdv';
-    document.querySelector('.mpanel .mcon').prepend(elA);
-  }
-  if(!document.getElementById('osd-c')){
-    const elC=document.createElement('div');elC.id='osd-c';elC.className='osdv';
-    document.getElementById('cc').prepend(elC);
-  }
+  // Always remove and recreate containers to guarantee a clean DOM node for OSD
+  const oldA=document.getElementById('osd-a');if(oldA)oldA.remove();
+  const oldC=document.getElementById('osd-c');if(oldC)oldC.remove();
+  const elA=document.createElement('div');elA.id='osd-a';elA.className='osdv';mconA.prepend(elA);
+  const elC=document.createElement('div');elC.id='osd-c';elC.className='osdv';document.getElementById('cc').prepend(elC);
 
   const common={showNavigationControl:false,gestureSettingsMouse:{clickToZoom:false},
     animationTime:.25,minZoomLevel:.1,maxZoomLevel:20,visibilityRatio:.4,
@@ -413,7 +412,10 @@ async function submit(){
     markReviewed(cur.atlas_id+'_'+cur.page);
     sessRev++;document.getElementById('sr').textContent=sessRev;
     toast(`Submitted — ${markers.length} code(s) recorded`,'ok');
-    refreshCity();updateProg(cur.state);advance();
+    const nextIdx=document.getElementById('hs').selectedIndex+1;
+    refreshCity();updateProg(cur.state);
+    const sel=document.getElementById('hs');
+    if(nextIdx<sel.options.length){sel.selectedIndex=nextIdx;onSheet();}
   }catch(e){toast('Submit failed: '+e.message,'er');console.error(e);}
 }
 
