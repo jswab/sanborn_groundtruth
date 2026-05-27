@@ -384,6 +384,7 @@ function loadSheet(s){
 
   const elA=document.getElementById('osd-a');
   const elC=document.getElementById('osd-c');
+  elA.innerHTML='';elC.innerHTML='';
 
   const common={showNavigationControl:false,gestureSettingsMouse:{clickToZoom:false,dblClickToZoom:false},
     animationTime:.25,minZoomLevel:.1,maxZoomLevel:20,visibilityRatio:.4,
@@ -527,8 +528,9 @@ async function submit(){
     markReviewed(cur.atlas_id+'_'+cur.page);
     sessRev++;document.getElementById('sr').textContent=sessRev;
     toast(`Submitted — ${markers.length} code(s) recorded`,'ok');
+    const hsIdx=document.getElementById('hs').selectedIndex;
     refreshCity();updateProg(cur.state);
-    advanceAfterSubmit();
+    advanceAfterSubmit(hsIdx);
   }catch(e){toast('Submit failed: '+e.message,'er');console.error(e);}
   finally{btn.disabled=false;}
 }
@@ -543,15 +545,16 @@ async function submitNoDetections(){
     markReviewed(cur.atlas_id+'_'+cur.page);
     sessRev++;document.getElementById('sr').textContent=sessRev;
     toast('Confirmed — no FB codes on this sheet','ok');
+    const hsIdx=document.getElementById('hs').selectedIndex;
     refreshCity();updateProg(cur.state);
-    advanceAfterSubmit();
+    advanceAfterSubmit(hsIdx);
   }catch(e){toast('Submit failed: '+e.message,'er');console.error(e);}
   finally{btn.disabled=false;}
 }
 
-function advanceAfterSubmit(){
+function advanceAfterSubmit(fromIdx){
   const hsSel=document.getElementById('hs');
-  const nextIdx=hsSel.selectedIndex+1;
+  const nextIdx=(fromIdx!==undefined?fromIdx:hsSel.selectedIndex)+1;
   if(nextIdx<hsSel.options.length){hsSel.selectedIndex=nextIdx;onSheet();return;}
   const st=document.getElementById('ss').value;
   const cities=[...new Set(manifest.filter(s=>s.state===st).map(s=>s.city))].sort();
