@@ -1,0 +1,4498 @@
+[
+  {
+    "atlas_id": "sanborn00005_001",
+    "page": 1,
+    "source_file": "sanborn00005_001_1.jpg",
+    "city": "Aliceville",
+    "county": "Pickens County",
+    "state": "Alabama",
+    "year": "1933",
+    "sheet_label": "Sheet 1",
+    "pipeline_count": 8,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.727",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.898",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.84",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.893",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.727",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.898",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.84",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.893",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974am:g3974am_g000051933:00005_1933-0001/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00005_001_1.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00005_001/"
+  },
+  {
+    "atlas_id": "sanborn00007_006",
+    "page": 1,
+    "source_file": "sanborn00007_006_1.jpg",
+    "city": "Anniston",
+    "county": "Calhoun County",
+    "state": "Alabama",
+    "year": "1905",
+    "sheet_label": "Sheet 1",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.737",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.737",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974am:g3974am_g000071905:00007_1905-0001/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00007_006_1.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00007_006/"
+  },
+  {
+    "atlas_id": "sanborn00007_007",
+    "page": 20,
+    "source_file": "sanborn00007_007_20.jpg",
+    "city": "Anniston",
+    "county": "Calhoun County",
+    "state": "Alabama",
+    "year": "1910",
+    "sheet_label": "Sheet 20",
+    "pipeline_count": 6,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.776",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.784",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.725",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.776",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.784",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.725",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974am:g3974am_g000071910:00007_1910-0020/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00007_007_20.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00007_007/"
+  },
+  {
+    "atlas_id": "sanborn00009_007",
+    "page": 2,
+    "source_file": "sanborn00009_007_2.jpg",
+    "city": "Athens",
+    "county": "Limestone County",
+    "state": "Alabama",
+    "year": "1921",
+    "sheet_label": "Sheet 2",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.628",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.628",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974am:g3974am_g000091921:00009_1921-0002/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00009_007_2.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00009_007/"
+  },
+  {
+    "atlas_id": "sanborn00014_008",
+    "page": 33,
+    "source_file": "sanborn00014_008_33.jpg",
+    "city": "Bessemer",
+    "county": "Jefferson County",
+    "state": "Alabama",
+    "year": "1924",
+    "sheet_label": "Sheet 33",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.646",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.646",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g000141924:00014_1924-0032/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00014_008_33.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00014_008/"
+  },
+  {
+    "atlas_id": "sanborn00015_003",
+    "page": 31,
+    "source_file": "sanborn00015_003_31.jpg",
+    "city": "Birmingham",
+    "county": "Jefferson County",
+    "state": "Alabama",
+    "year": "1891",
+    "sheet_label": "Sheet 31",
+    "pipeline_count": 12,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.884",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.928",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.909",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.878",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.865",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.873",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.884",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.928",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.909",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.878",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.865",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.873",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g000151891:00015_1891-0030/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00015_003_31.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00015_003/"
+  },
+  {
+    "atlas_id": "sanborn00015_004",
+    "page": 22,
+    "source_file": "sanborn00015_004_22.jpg",
+    "city": "Birmingham",
+    "county": "Jefferson County",
+    "state": "Alabama",
+    "year": "1902",
+    "sheet_label": "Sheet 22",
+    "pipeline_count": 20,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.897",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.924",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.87",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.873",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.729",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.908",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.812",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.913",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.873",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.959",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.897",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.924",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.87",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.873",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.729",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.908",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.812",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.913",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.873",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.959",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g000151902:00015_1902-0019/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00015_004_22.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00015_004/"
+  },
+  {
+    "atlas_id": "sanborn00015_004",
+    "page": 26,
+    "source_file": "sanborn00015_004_26.jpg",
+    "city": "Birmingham",
+    "county": "Jefferson County",
+    "state": "Alabama",
+    "year": "1902",
+    "sheet_label": "Sheet 26",
+    "pipeline_count": 6,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.704",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.938",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.817",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.704",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.938",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.817",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g000151902:00015_1902-0021/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00015_004_26.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00015_004/"
+  },
+  {
+    "atlas_id": "sanborn00015_004",
+    "page": 44,
+    "source_file": "sanborn00015_004_44.jpg",
+    "city": "Birmingham",
+    "county": "Jefferson County",
+    "state": "Alabama",
+    "year": "1902",
+    "sheet_label": "Sheet 44",
+    "pipeline_count": 8,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.947",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.903",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.937",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.852",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.947",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.903",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.937",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.852",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g000151902:00015_1902-0037/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00015_004_44.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00015_004/"
+  },
+  {
+    "atlas_id": "sanborn00015_004",
+    "page": 81,
+    "source_file": "sanborn00015_004_81.jpg",
+    "city": "Birmingham",
+    "county": "Jefferson County",
+    "state": "Alabama",
+    "year": "1902",
+    "sheet_label": "Sheet 81",
+    "pipeline_count": 8,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.795",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.867",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.799",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.864",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.795",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.867",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.799",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.864",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g000151902:00015_1902-0074/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00015_004_81.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00015_004/"
+  },
+  {
+    "atlas_id": "sanborn00015_004",
+    "page": 114,
+    "source_file": "sanborn00015_004_114.jpg",
+    "city": "Birmingham",
+    "county": "Jefferson County",
+    "state": "Alabama",
+    "year": "1902",
+    "sheet_label": "Sheet 114",
+    "pipeline_count": 16,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.981",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.961",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.975",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.964",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.965",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.98",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.963",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.962",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.981",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.961",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.975",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.964",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.965",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.98",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.963",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.962",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g000151902:00015_1902-0107/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00015_004_114.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00015_004/"
+  },
+  {
+    "atlas_id": "sanborn00015_006",
+    "page": 22,
+    "source_file": "sanborn00015_006_22.jpg",
+    "city": "Birmingham",
+    "county": "Jefferson County",
+    "state": "Alabama",
+    "year": "1911",
+    "sheet_label": "Sheet 22",
+    "pipeline_count": 12,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.884",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.827",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.732",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.859",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.537",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.477",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.884",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.827",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.732",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.859",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.537",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.477",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g00015191102:00015_02_1911-0164/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00015_006_22.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00015_006/"
+  },
+  {
+    "atlas_id": "sanborn00015_006",
+    "page": 24,
+    "source_file": "sanborn00015_006_24.jpg",
+    "city": "Birmingham",
+    "county": "Jefferson County",
+    "state": "Alabama",
+    "year": "1911",
+    "sheet_label": "Sheet 24",
+    "pipeline_count": 60,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.99",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.889",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.961",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.934",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.811",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.816",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.764",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.906",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.81",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.899",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.804",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.986",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.773",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.795",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.819",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.877",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.846",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.993",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.948",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.77",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.843",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.752",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.927",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.879",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.82",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.793",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.904",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.915",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.815",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.872",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.99",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.889",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.961",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.934",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.811",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.816",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.764",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.906",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.81",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.899",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.804",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.986",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.773",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.795",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.819",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.877",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.846",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.993",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.948",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.77",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.843",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.752",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.927",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.879",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.82",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.793",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.904",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.915",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.815",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.872",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g00015191102:00015_02_1911-0165s/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00015_006_24.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00015_006/"
+  },
+  {
+    "atlas_id": "sanborn00015_006",
+    "page": 51,
+    "source_file": "sanborn00015_006_51.jpg",
+    "city": "Birmingham",
+    "county": "Jefferson County",
+    "state": "Alabama",
+    "year": "1911",
+    "sheet_label": "Sheet 51",
+    "pipeline_count": 4,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.774",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.763",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.774",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.763",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g00015191102:00015_02_1911-0188/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00015_006_51.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00015_006/"
+  },
+  {
+    "atlas_id": "sanborn00015_008",
+    "page": 66,
+    "source_file": "sanborn00015_008_66.jpg",
+    "city": "Birmingham",
+    "county": "Jefferson County",
+    "state": "Alabama",
+    "year": "1911",
+    "sheet_label": "Sheet 66",
+    "pipeline_count": 16,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.946",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.922",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.871",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.922",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.931",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.863",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.947",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.868",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.946",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.922",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.871",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.922",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.931",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.863",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.947",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.868",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g00015191104:00015_04_1911-0513/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00015_008_66.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00015_008/"
+  },
+  {
+    "atlas_id": "sanborn00015_008",
+    "page": 99,
+    "source_file": "sanborn00015_008_99.jpg",
+    "city": "Birmingham",
+    "county": "Jefferson County",
+    "state": "Alabama",
+    "year": "1911",
+    "sheet_label": "Sheet 99",
+    "pipeline_count": 12,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.924",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.933",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.922",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.912",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.988",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.937",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.924",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.933",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.922",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.912",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.988",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.937",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g00015191104:00015_04_1911-0546/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00015_008_99.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00015_008/"
+  },
+  {
+    "atlas_id": "sanborn00015_014",
+    "page": 12,
+    "source_file": "sanborn00015_014_12.jpg",
+    "city": "Birmingham",
+    "county": "Jefferson County",
+    "state": "Alabama",
+    "year": "1951",
+    "sheet_label": "Sheet 12",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.569",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.569",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g00015195101:00015_01_1951-0005/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00015_014_12.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00015_014/"
+  },
+  {
+    "atlas_id": "sanborn00015_014",
+    "page": 125,
+    "source_file": "sanborn00015_014_125.jpg",
+    "city": "Birmingham",
+    "county": "Jefferson County",
+    "state": "Alabama",
+    "year": "1951",
+    "sheet_label": "Sheet 125",
+    "pipeline_count": 10,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.889",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.543",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.844",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.935",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.943",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.889",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.543",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.844",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.935",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.943",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g00015195101:00015_01_1951-0106/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00015_014_125.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00015_014/"
+  },
+  {
+    "atlas_id": "sanborn00015_014",
+    "page": 126,
+    "source_file": "sanborn00015_014_126.jpg",
+    "city": "Birmingham",
+    "county": "Jefferson County",
+    "state": "Alabama",
+    "year": "1951",
+    "sheet_label": "Sheet 126",
+    "pipeline_count": 6,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.893",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.85",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.944",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.893",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.85",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.944",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g00015195101:00015_01_1951-0107/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00015_014_126.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00015_014/"
+  },
+  {
+    "atlas_id": "sanborn00018_003",
+    "page": 1,
+    "source_file": "sanborn00018_003_1.jpg",
+    "city": "Bridgeport",
+    "county": "Jackson County",
+    "state": "Alabama",
+    "year": "1903",
+    "sheet_label": "Sheet 1",
+    "pipeline_count": 6,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.795",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.796",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.783",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.795",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.796",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.783",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974bm:g3974bm_g000181903:00018_1903-0001/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00018_003_1.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00018_003/"
+  },
+  {
+    "atlas_id": "sanborn00028_002",
+    "page": 1,
+    "source_file": "sanborn00028_002_1.jpg",
+    "city": "Columbiana",
+    "county": "Shelby County",
+    "state": "Alabama",
+    "year": "1923",
+    "sheet_label": "Sheet 1",
+    "pipeline_count": 16,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.988",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.925",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.902",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.987",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.969",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.959",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.948",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.948",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.988",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.925",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.902",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.987",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.969",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.959",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.948",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.948",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974cm:g3974cm_g000281923:00028_1923-0001/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00028_002_1.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00028_002/"
+  },
+  {
+    "atlas_id": "sanborn00032_004",
+    "page": 2,
+    "source_file": "sanborn00032_004_2.jpg",
+    "city": "Decatur",
+    "county": "Morgan County",
+    "state": "Alabama",
+    "year": "1898",
+    "sheet_label": "Sheet 2",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.783",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.783",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974dm:g3974dm_g000321898:00032_1898-0002/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00032_004_2.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00032_004/"
+  },
+  {
+    "atlas_id": "sanborn00032_011",
+    "page": 35,
+    "source_file": "sanborn00032_011_35.jpg",
+    "city": "Decatur",
+    "county": "Morgan County",
+    "state": "Alabama",
+    "year": "1953",
+    "sheet_label": "Sheet 35",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.568",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.568",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974dm:g3974dm_g000321953:00032_1953-0033/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00032_011_35.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00032_011/"
+  },
+  {
+    "atlas_id": "sanborn00034_005",
+    "page": 1,
+    "source_file": "sanborn00034_005_1.jpg",
+    "city": "Dothan",
+    "county": "Houston County",
+    "state": "Alabama",
+    "year": "1912",
+    "sheet_label": "Sheet 1",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.588",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.588",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974dm:g3974dm_g000341912:00034_1912-0001/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00034_005_1.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00034_005/"
+  },
+  {
+    "atlas_id": "sanborn00034_005",
+    "page": 13,
+    "source_file": "sanborn00034_005_13.jpg",
+    "city": "Dothan",
+    "county": "Houston County",
+    "state": "Alabama",
+    "year": "1912",
+    "sheet_label": "Sheet 13",
+    "pipeline_count": 6,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.889",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.756",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.867",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.889",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.756",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.867",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974dm:g3974dm_g000341912:00034_1912-0013/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00034_005_13.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00034_005/"
+  },
+  {
+    "atlas_id": "sanborn00034_006",
+    "page": 13,
+    "source_file": "sanborn00034_006_13.jpg",
+    "city": "Dothan",
+    "county": "Houston County",
+    "state": "Alabama",
+    "year": "1920",
+    "sheet_label": "Sheet 13",
+    "pipeline_count": 6,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.735",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.781",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.918",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.735",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.781",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.918",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974dm:g3974dm_g000341920:00034_1920-0012/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00034_006_13.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00034_006/"
+  },
+  {
+    "atlas_id": "sanborn00041_001",
+    "page": 3,
+    "source_file": "sanborn00041_001_3.jpg",
+    "city": "Fayette",
+    "county": "Fayette County",
+    "state": "Alabama",
+    "year": "1928",
+    "sheet_label": "Sheet 3",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.641",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.641",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974fm:g3974fm_g000411928:00041-1928-0003/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00041_001_3.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00041_001/"
+  },
+  {
+    "atlas_id": "sanborn00043_003",
+    "page": 1,
+    "source_file": "sanborn00043_003_1.jpg",
+    "city": "Florence",
+    "county": "Lauderdale County",
+    "state": "Alabama",
+    "year": "1894",
+    "sheet_label": "Sheet 1",
+    "pipeline_count": 14,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.92",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.807",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.885",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.873",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.937",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.912",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.818",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.92",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.807",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.885",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.873",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.937",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.912",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.818",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974fm:g3974fm_g000431894:00043_1894-0001/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00043_003_1.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00043_003/"
+  },
+  {
+    "atlas_id": "sanborn00047_001",
+    "page": 1,
+    "source_file": "sanborn00047_001_1.jpg",
+    "city": "Gainesville",
+    "county": "Sumter County",
+    "state": "Alabama",
+    "year": "1884",
+    "sheet_label": "Sheet 1",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.533",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.533",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974gm:g3974gm_g000471884:00047_1884-0001/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00047_001_1.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00047_001/"
+  },
+  {
+    "atlas_id": "sanborn00049_002",
+    "page": 1,
+    "source_file": "sanborn00049_002_1.jpg",
+    "city": "Georgiana",
+    "county": "Butler County",
+    "state": "Alabama",
+    "year": "1927",
+    "sheet_label": "Sheet 1",
+    "pipeline_count": 8,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.884",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.76",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.876",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.845",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.884",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.76",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.876",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.845",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974gm:g3974gm_g000491927:00049-1927-0001/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00049_002_1.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00049_002/"
+  },
+  {
+    "atlas_id": "sanborn00071_003",
+    "page": 50,
+    "source_file": "sanborn00071_003_50.jpg",
+    "city": "Mobile",
+    "county": "Mobile County",
+    "state": "Alabama",
+    "year": "1904",
+    "sheet_label": "Sheet 50",
+    "pipeline_count": 78,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.817",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.767",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.797",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.758",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.897",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.906",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.934",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.715",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.813",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.916",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.96",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.913",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.97",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.982",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.577",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.739",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.865",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.921",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.953",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.792",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.953",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.912",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.915",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.88",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.859",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.969",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.903",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.877",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.799",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.924",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.939",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.912",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.907",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.85",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.924",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.971",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.95",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.891",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.887",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.817",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.767",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.797",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.758",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.897",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.906",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.934",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.715",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.813",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.916",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.96",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.913",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.97",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.982",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.577",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.739",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.865",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.921",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.953",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.792",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.953",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.912",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.915",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.88",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.859",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.969",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.903",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.877",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.799",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.924",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.939",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.912",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.907",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.85",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.924",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.971",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.95",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.891",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.887",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974mm:g3974mm_g000711904:00071_1904-0038/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00071_003_50.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00071_003/"
+  },
+  {
+    "atlas_id": "sanborn00071_012",
+    "page": 2,
+    "source_file": "sanborn00071_012_2.jpg",
+    "city": "Mobile",
+    "county": "Mobile County",
+    "state": "Alabama",
+    "year": "1956",
+    "sheet_label": "Sheet 2",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.511",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.511",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974mm:g3974mm_g00071195604:00071_04_1956-ind1/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00071_012_2.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00071_012/"
+  },
+  {
+    "atlas_id": "sanborn00074_001",
+    "page": 8,
+    "source_file": "sanborn00074_001_8.jpg",
+    "city": "Montgomery",
+    "county": "Montgomery County",
+    "state": "Alabama",
+    "year": "1884",
+    "sheet_label": "Sheet 8",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.812",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.812",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974mm:g3974mm_g000741884:00074_1884-0008/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00074_001_8.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00074_001/"
+  },
+  {
+    "atlas_id": "sanborn00074_005",
+    "page": 3,
+    "source_file": "sanborn00074_005_3.jpg",
+    "city": "Montgomery",
+    "county": "Montgomery County",
+    "state": "Alabama",
+    "year": "1910",
+    "sheet_label": "Sheet 3",
+    "pipeline_count": 14,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.804",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.908",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.731",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.844",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.82",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.849",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.835",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.804",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.908",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.731",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.844",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.82",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.849",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.835",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974mm:g3974mm_g00074191001:00074_01_1910-cbd/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00074_005_3.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00074_005/"
+  },
+  {
+    "atlas_id": "sanborn00074_005",
+    "page": 4,
+    "source_file": "sanborn00074_005_4.jpg",
+    "city": "Montgomery",
+    "county": "Montgomery County",
+    "state": "Alabama",
+    "year": "1910",
+    "sheet_label": "Sheet 4",
+    "pipeline_count": 14,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.804",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.908",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.731",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.844",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.82",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.849",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.835",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.804",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.908",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.731",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.844",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.82",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.849",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.835",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974mm:g3974mm_g00074191001:00074_01_1910-0000/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00074_005_4.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00074_005/"
+  },
+  {
+    "atlas_id": "sanborn00074_005",
+    "page": 6,
+    "source_file": "sanborn00074_005_6.jpg",
+    "city": "Montgomery",
+    "county": "Montgomery County",
+    "state": "Alabama",
+    "year": "1910",
+    "sheet_label": "Sheet 6",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.728",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.728",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974mm:g3974mm_g00074191001:00074_01_1910-0002/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00074_005_6.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00074_005/"
+  },
+  {
+    "atlas_id": "sanborn00074_005",
+    "page": 36,
+    "source_file": "sanborn00074_005_36.jpg",
+    "city": "Montgomery",
+    "county": "Montgomery County",
+    "state": "Alabama",
+    "year": "1910",
+    "sheet_label": "Sheet 36",
+    "pipeline_count": 10,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.839",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.759",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.822",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.583",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.794",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.839",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.759",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.822",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.583",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.794",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974mm:g3974mm_g00074191001:00074_01_1910-0028/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00074_005_36.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00074_005/"
+  },
+  {
+    "atlas_id": "sanborn00074_005",
+    "page": 41,
+    "source_file": "sanborn00074_005_41.jpg",
+    "city": "Montgomery",
+    "county": "Montgomery County",
+    "state": "Alabama",
+    "year": "1910",
+    "sheet_label": "Sheet 41",
+    "pipeline_count": 28,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.915",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.891",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.965",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.814",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.89",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.817",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.94",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.758",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.878",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.945",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.976",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.879",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.981",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.883",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.915",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.891",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.965",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.814",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.89",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.817",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.94",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.758",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.878",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.945",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.976",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.879",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.981",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.883",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974mm:g3974mm_g00074191001:00074_01_1910-0033/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00074_005_41.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00074_005/"
+  },
+  {
+    "atlas_id": "sanborn00074_009",
+    "page": 9,
+    "source_file": "sanborn00074_009_9.jpg",
+    "city": "Montgomery",
+    "county": "Montgomery County",
+    "state": "Alabama",
+    "year": "1950",
+    "sheet_label": "Sheet 9",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.745",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.745",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974mm:g3974mm_g00074195003:00074_03_1950-0165/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00074_009_9.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00074_009/"
+  },
+  {
+    "atlas_id": "sanborn00074_009",
+    "page": 30,
+    "source_file": "sanborn00074_009_30.jpg",
+    "city": "Montgomery",
+    "county": "Montgomery County",
+    "state": "Alabama",
+    "year": "1950",
+    "sheet_label": "Sheet 30",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.989",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.989",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974mm:g3974mm_g00074195003:00074_03_1950-0186/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00074_009_30.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00074_009/"
+  },
+  {
+    "atlas_id": "sanborn00074_007",
+    "page": 81,
+    "source_file": "sanborn00074_007_81.jpg",
+    "city": "Montgomery",
+    "county": "Montgomery County",
+    "state": "Alabama",
+    "year": "1950",
+    "sheet_label": "Sheet 81",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.556",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.556",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974mm:g3974mm_g00074195001:00074_01_1950-0071/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00074_007_81.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00074_007/"
+  },
+  {
+    "atlas_id": "sanborn00074_010",
+    "page": 4,
+    "source_file": "sanborn00074_010_4.jpg",
+    "city": "Montgomery",
+    "county": "Montgomery County",
+    "state": "Alabama",
+    "year": "1953",
+    "sheet_label": "Sheet 4",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.52",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.52",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00074_010_4.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00074_010/"
+  },
+  {
+    "atlas_id": "sanborn00074_011",
+    "page": 6,
+    "source_file": "sanborn00074_011_6.jpg",
+    "city": "Montgomery",
+    "county": "Montgomery County",
+    "state": "Alabama",
+    "year": "1953",
+    "sheet_label": "Sheet 6",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.729",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.729",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00074_011_6.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00074_011/"
+  },
+  {
+    "atlas_id": "sanborn00074_010",
+    "page": 36,
+    "source_file": "sanborn00074_010_36.jpg",
+    "city": "Montgomery",
+    "county": "Montgomery County",
+    "state": "Alabama",
+    "year": "1953",
+    "sheet_label": "Sheet 36",
+    "pipeline_count": 4,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.949",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.964",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.949",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.964",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00074_010_36.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00074_010/"
+  },
+  {
+    "atlas_id": "sanborn00091_006",
+    "page": 15,
+    "source_file": "sanborn00091_006_15.jpg",
+    "city": "Selma",
+    "county": "Dallas County",
+    "state": "Alabama",
+    "year": "1907",
+    "sheet_label": "Sheet 15",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.825",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "FB",
+        "confidence": "0.825",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974sm:g3974sm_g000911907:00091_1907-0015/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00091_006_15.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00091_006/"
+  },
+  {
+    "atlas_id": "sanborn00092_005",
+    "page": 21,
+    "source_file": "sanborn00092_005_21.jpg",
+    "city": "Sheffield",
+    "county": "Colbert County",
+    "state": "Alabama",
+    "year": "1921",
+    "sheet_label": "Sheet 21",
+    "pipeline_count": 10,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.998",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.997",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.999",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.998",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.997",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.998",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.997",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.999",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.998",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.997",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00092_005_21.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00092_005/"
+  },
+  {
+    "atlas_id": "sanborn00096_005",
+    "page": 1,
+    "source_file": "sanborn00096_005_1.jpg",
+    "city": "Sylacauga",
+    "county": "Talladega County",
+    "state": "Alabama",
+    "year": "1922",
+    "sheet_label": "Sheet 1",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.507",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.507",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "https://tile.loc.gov/image-services/iiif/service:gmd:gmd397m:g3974m:g3974sm:g3974sm_g000961922:00096_1922-0001/full/pct:25/0/default.jpg",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00096_005_1.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00096_005/"
+  },
+  {
+    "atlas_id": "sanborn00097_002",
+    "page": 1,
+    "source_file": "sanborn00097_002_1.jpg",
+    "city": "Talladega",
+    "county": "Talladega County",
+    "state": "Alabama",
+    "year": "1889",
+    "sheet_label": "Sheet 1",
+    "pipeline_count": 6,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.925",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.946",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.855",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.925",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.946",
+        "ocr_pass": "deep"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.855",
+        "ocr_pass": "deep"
+      }
+    ],
+    "loc_clean_url": "",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00097_002_1.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00097_002/"
+  },
+  {
+    "atlas_id": "sanborn00102_005",
+    "page": 19,
+    "source_file": "sanborn00102_005_19.jpg",
+    "city": "Tuscaloosa",
+    "county": "Tuscaloosa County",
+    "state": "Alabama",
+    "year": "1905",
+    "sheet_label": "Sheet 19",
+    "pipeline_count": 2,
+    "pipeline_detections": [
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.515",
+        "ocr_pass": "standard"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "text": "",
+        "bucket": "OCR_NOISE",
+        "confidence": "0.515",
+        "ocr_pass": "standard"
+      }
+    ],
+    "loc_clean_url": "",
+    "annotated_url": "https://raw.githubusercontent.com/jswab/sanborn_groundtruth/main/annotated/alabama/sanborn00102_005_19.jpg",
+    "loc_item_url": "https://www.loc.gov/item/sanborn00102_005/"
+  }
+]
