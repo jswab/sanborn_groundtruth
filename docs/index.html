@@ -509,6 +509,7 @@ async function confirmRedo(){
   const selected=[...document.querySelectorAll('#redo-list input:checked')].map(cb=>cb.value);
   if(!selected.length){toast('No sheets selected','');return;}
   if(!confirm(`Mark ${selected.length} sheet(s) for redo? This will remove them from your reviewed list.`))return;
+  closeRedo();
   const rev=getReviewed();
   for(const k of selected){
     const s=manifest.find(x=>x.atlas_id+'_'+x.page===k);
@@ -522,7 +523,6 @@ async function confirmRedo(){
     rev.delete(k);
   }
   localStorage.setItem('sanborn_gt',JSON.stringify([...rev]));
-  closeRedo();
   refreshCity();
   if(cur)updateProg(cur.state);
   updateTotalCount();
