@@ -111,6 +111,9 @@ textarea#notes:focus{border-color:var(--rust)}
 .rmodal-foot button{padding:9px 18px;background:var(--rust);color:#fff;border:none;font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
 .rmodal-foot button:hover{background:var(--brown)}
 .btn:disabled{opacity:.5;cursor:not-allowed}
+#det-ov{position:absolute;inset:0;pointer-events:none;z-index:10}
+.det-box{position:absolute;pointer-events:none}
+.det-label{position:absolute;bottom:100%;left:0;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:9px;background:rgba(0,0,0,.78);padding:1px 4px;line-height:1.5;max-width:180px;overflow:hidden;text-overflow:ellipsis}
 </style>
 </head>
 <body>
@@ -151,10 +154,10 @@ textarea#notes:focus{border-color:var(--rust)}
 <div id="ws">
   <div class="mpanel">
     <div class="phead">
-      <span class="plabel ann">◈ Pipeline Output (annotated)</span>
+      <span class="plabel ann">◈ Pipeline Detections</span>
       <span id="syncbadge">⇄ Synced</span>
     </div>
-    <div class="mcon"><div id="osd-a" class="osdv"></div></div>
+    <div class="mcon"><div id="osd-a" class="osdv"></div><div id="det-ov"></div></div>
   </div>
 
   <div class="mpanel">
@@ -238,7 +241,7 @@ const APP_VERSION='v1.8';
 const APP_UPDATED='2026-05-27T22:03:49Z';
 let manifest=[],cur=null,markers=[],marking=true,synced=true,syncLock=false,flagged=false;
 let osdA=null,osdC=null,sessRev=0,sessSk=0,user=null;
-let mconA=null,mconC=null;
+let mconA=null,mconC=null,detections=[];
 
 async function boot(){
   const sel=document.getElementById('lu');
@@ -325,14 +328,18 @@ function loadSheet(s){
     animationTime:.25,minZoomLevel:.1,maxZoomLevel:20,visibilityRatio:.4,
     constrainDuringPan:false,blendTime:.1};
 
+  document.getElementById('det-ov').innerHTML='';
+  detections=s.pipeline_detections||[];
+
   showLoad(true);let loaded=0;
   function onO(){if(++loaded>=2)showLoad(false);}
   setTimeout(()=>showLoad(false),10000);
 
-  osdA=OpenSeadragon({element:elA,...common,tileSources:{type:'image',url:s.annotated_url}});
+  osdA=OpenSeadragon({element:elA,...common,tileSources:{type:'image',url:s.loc_clean_url}});
   osdC=OpenSeadragon({element:elC,...common,tileSources:{type:'image',url:s.loc_clean_url}});
 
   osdA.addOnceHandler('open',onO);
+  osdA.addOnceHandler('open',()=>drawDetections(detections));
   osdC.addOnceHandler('open',onO);
 
   function syncFrom(src,tgt){
@@ -345,6 +352,9 @@ function loadSheet(s){
   osdA.addHandler('zoom',()=>syncFrom(osdA,osdC));
   osdC.addHandler('pan',()=>syncFrom(osdC,osdA));
   osdC.addHandler('zoom',()=>syncFrom(osdC,osdA));
+
+  osdA.addHandler('update-viewport',reposDetections);
+  osdA.addHandler('animation',reposDetections);
 
   osdC.addHandler('canvas-click',function(e){
     if(!marking||!cur)return;
@@ -591,6 +601,51 @@ function toast(msg,type=''){
   const t=document.getElementById('toast');t.textContent=msg;t.className='show '+type;
   clearTimeout(tTimer);tTimer=setTimeout(()=>{t.className='';},3000);
 }
+function detBoxColor(d){
+  if(d.bucket==='OCR_NOISE')return'#f97316';
+  if(d.confidence>=0.80)return'#22c55e';
+  if(d.confidence>=0.65)return'#eab308';
+  return'#ef4444';
+}
+
+function drawDetections(dets){
+  const ov=document.getElementById('det-ov');if(!ov)return;
+  ov.innerHTML='';
+  dets.forEach(d=>{
+    const color=detBoxColor(d);
+    const el=document.createElement('div');
+    el.className='det-box';
+    el.style.border='2px solid '+color;
+    el.dataset.x=d.x;el.dataset.y=d.y;
+    const lbl=document.createElement('div');
+    lbl.className='det-label';
+    lbl.style.color=color;
+    lbl.textContent=d.text;
+    el.appendChild(lbl);
+    ov.appendChild(el);
+  });
+  reposDetections();
+}
+
+function reposDetections(){
+  if(!osdA)return;
+  const item=osdA.world.getItemAt(0);if(!item)return;
+  const ov=document.getElementById('det-ov');if(!ov)return;
+  const box=mconA.getBoundingClientRect();
+  const HW=80;
+  ov.querySelectorAll('.det-box').forEach(el=>{
+    const ix=parseFloat(el.dataset.x),iy=parseFloat(el.dataset.y);
+    const tl=osdA.viewport.imageToViewportCoordinates(new OpenSeadragon.Point(ix-HW,iy-HW));
+    const br=osdA.viewport.imageToViewportCoordinates(new OpenSeadragon.Point(ix+HW,iy+HW));
+    const tlW=osdA.viewport.viewportToWindowCoordinates(tl);
+    const brW=osdA.viewport.viewportToWindowCoordinates(br);
+    el.style.left=(tlW.x-box.left)+'px';
+    el.style.top=(tlW.y-box.top)+'px';
+    el.style.width=(brW.x-tlW.x)+'px';
+    el.style.height=(brW.y-tlW.y)+'px';
+  });
+}
+
 window.addEventListener('DOMContentLoaded',boot);
 </script>
 </body>
