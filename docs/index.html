@@ -196,7 +196,7 @@ textarea#notes:focus{border-color:var(--rust)}
 <div id="toast"></div>
 <script src="config.js"></script>
 <script>
-const APP_VERSION='v1.4';
+const APP_VERSION='v1.5';
 const APP_UPDATED='2026-05-27T00:00:00';
 let manifest=[],cur=null,markers=[],marking=true,synced=true,syncLock=false,flagged=false;
 let osdA=null,osdC=null,sessRev=0,sessSk=0,user=null;
@@ -443,7 +443,8 @@ function buildRow(status){
 
 async function sendRow(row){
   if(!CONFIG.googleSheetWebAppUrl){dlCSV(row);return;}
-  await fetch(CONFIG.googleSheetWebAppUrl,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(row)});
+  const payload=CONFIG.googleSheetSecret?{...row,secret:CONFIG.googleSheetSecret}:row;
+  await fetch(CONFIG.googleSheetWebAppUrl,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
 }
 
 function dlCSV(row){

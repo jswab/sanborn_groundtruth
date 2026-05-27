@@ -4,6 +4,6 @@ const CONFIG = {
     { name: "Mia",  password: "redbull" },
   ],
 
-  // Leave as "" for now — we'll add the Google Sheet URL later
   googleSheetWebAppUrl: "",
+  googleSheetSecret: "",
 };
