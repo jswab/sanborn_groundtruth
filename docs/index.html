@@ -194,7 +194,7 @@ textarea#notes:focus{border-color:var(--rust)}
       <button class="btn" id="btn-sync" onclick="toggleSync()"><span class="ico">⇄</span>Unlink Panning</button>
       <button class="btn" onclick="resetZoom()"><span class="ico">⊡</span>Reset Zoom</button>
     </div>
-    <div class="sbs">
+    <div class="sbs" id="notes-section" style="display:none">
       <h3>Notes (optional)</h3>
       <textarea id="notes" placeholder="Any observations about this sheet…"></textarea>
     </div>
@@ -233,7 +233,7 @@ textarea#notes:focus{border-color:var(--rust)}
 <div id="toast"></div>
 <script src="config.js"></script>
 <script>
-const APP_VERSION='v1.6';
+const APP_VERSION='v1.7';
 const APP_UPDATED='2026-05-27T00:00:00';
 let manifest=[],cur=null,markers=[],marking=true,synced=true,syncLock=false,flagged=false;
 let osdA=null,osdC=null,sessRev=0,sessSk=0,user=null;
@@ -430,12 +430,16 @@ function toggleSync(){
 function toggleFlag(){
   flagged=!flagged;
   const btn=document.getElementById('btn-flag');
+  const notes=document.getElementById('notes-section');
   if(flagged){
     btn.className='btn flag on';
     btn.innerHTML='<span class="ico">⚑</span>Flagged for Review';
+    notes.style.display='block';
+    document.getElementById('notes').focus();
   }else{
     btn.className='btn flag';
     btn.innerHTML='<span class="ico">⚑</span>Flag for Review';
+    notes.style.display='none';
   }
 }
 
