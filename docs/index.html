@@ -114,6 +114,28 @@ textarea#notes:focus{border-color:var(--rust)}
 #det-ov{position:absolute;inset:0;pointer-events:none;z-index:10}
 .det-box{position:absolute;pointer-events:none}
 .det-label{position:absolute;bottom:100%;left:0;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:9px;background:rgba(0,0,0,.78);padding:1px 4px;line-height:1.5;max-width:180px;overflow:hidden;text-overflow:ellipsis}
+#btn-info{background:none;border:1px solid var(--gold);color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:.72rem;padding:3px 10px;cursor:pointer;letter-spacing:.04em}
+#btn-info:hover{background:rgba(90,158,90,.2)}
+#town-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:450;background:rgba(13,31,13,.55)}
+.tmodal{background:var(--paper);border:2px solid var(--gold);padding:32px 44px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.4)}
+.tmodal-tag{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.tmodal-city{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--brown);margin-bottom:4px}
+.tmodal-state{font-family:'IBM Plex Mono',monospace;font-size:.85rem;color:var(--muted);margin-bottom:22px}
+.tmodal button{padding:8px 24px;background:var(--rust);color:#fff;border:none;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+.tmodal button:hover{background:var(--brown)}
+#info-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:450;background:rgba(13,31,13,.6)}
+.imodal{background:var(--paper);border:2px solid var(--gold);width:560px;max-width:95vw;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,.4)}
+.imodal-head{background:var(--brown);color:var(--cream);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;flex-shrink:0}
+.imodal-head button{background:none;border:none;color:var(--cream);font-size:1.2rem;cursor:pointer;line-height:1;padding:0 2px}
+.imodal-body{padding:18px 20px;overflow-y:auto;flex:1;font-size:.83rem;line-height:1.6;color:var(--ink)}
+.imodal-body h4{font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:16px 0 7px;border-bottom:1px solid var(--border);padding-bottom:4px}
+.imodal-body h4:first-child{margin-top:0}
+.imodal-body p{margin-bottom:6px}
+.chip{display:inline-block;padding:1px 6px;font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:600;margin-right:3px;border:1px solid}
+.chip-g{background:#22c55e18;color:#15803d;border-color:#22c55e55}
+.chip-y{background:#eab30818;color:#a16207;border-color:#eab30855}
+.chip-r{background:#ef444418;color:#b91c1c;border-color:#ef444455}
+.chip-o{background:#f9731618;color:#c2410c;border-color:#f9731655}
 </style>
 </head>
 <body>
@@ -138,6 +160,7 @@ textarea#notes:focus{border-color:var(--rust)}
   <h1>Sanborn Ground Truth Reviewer</h1>
   <div id="tb-meta"></div>
   <div id="tb-reviewed" style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.04em"></div>
+  <button id="btn-info" onclick="showInfo()">? Help</button>
   <div id="tb-user">Not signed in</div>
 </div>
 
@@ -162,7 +185,7 @@ textarea#notes:focus{border-color:var(--rust)}
 
   <div class="mpanel">
     <div class="phead">
-      <span class="plabel cln">◎ Clean Map — click to mark FB codes</span>
+      <span class="plabel cln">◎ Clean Map — double-click to mark FB codes</span>
     </div>
     <div class="mcon" id="cc" style="cursor:crosshair">
       <div id="osd-c" class="osdv"></div>
@@ -204,6 +227,7 @@ textarea#notes:focus{border-color:var(--rust)}
     </div>
     <div class="sbs">
       <button class="btn pr" id="btn-submit" onclick="submit()"><span class="ico">✓</span>Submit &amp; Next Sheet</button>
+      <button class="btn" id="btn-nodet" onclick="submitNoDetections()"><span class="ico">∅</span>No Detections</button>
       <button class="btn" onclick="skip()"><span class="ico">→</span>Skip This Sheet</button>
       <button class="btn flag" id="btn-flag" onclick="toggleFlag()"><span class="ico">⚑</span>Flag for Review</button>
     </div>
@@ -230,6 +254,46 @@ textarea#notes:focus{border-color:var(--rust)}
     <div class="rmodal-foot">
       <span class="rcount" id="redo-count">0 selected</span>
       <button onclick="confirmRedo()">Mark for Redo</button>
+    </div>
+  </div>
+</div>
+
+<div id="town-modal">
+  <div class="tmodal">
+    <div class="tmodal-tag">Now Reviewing</div>
+    <div class="tmodal-city" id="tm-city"></div>
+    <div class="tmodal-state" id="tm-state"></div>
+    <button onclick="document.getElementById('town-modal').style.display='none'">Continue →</button>
+  </div>
+</div>
+
+<div id="info-modal">
+  <div class="imodal">
+    <div class="imodal-head">
+      <span>How to Use This Tool</span>
+      <button onclick="closeInfo()">×</button>
+    </div>
+    <div class="imodal-body">
+      <h4>Left Panel — Pipeline Detections</h4>
+      <p>Shows bounding boxes from the ML pipeline over the Sanborn map. Color indicates confidence:<br>
+        <span class="chip chip-g">Green ≥ 0.80</span>
+        <span class="chip chip-y">Yellow 0.65–0.79</span>
+        <span class="chip chip-r">Red &lt; 0.65</span>
+        <span class="chip chip-o">Orange = OCR noise</span><br>
+        Each box shows the detected text. Both panels show the same clean map image.
+      </p>
+      <h4>Right Panel — Marking</h4>
+      <p><strong>Double-click</strong> anywhere on the map to place a numbered marker on an FB code — even if the pipeline missed it. Each marker is numbered in order. Toggle <em>Marking Mode</em> off to use the panel for panning only without accidentally placing markers.</p>
+      <h4>Submitting a Sheet</h4>
+      <p><strong>Submit &amp; Next Sheet</strong> — saves your markers and advances. At the end of a town it automatically moves to the next town (or state).</p>
+      <p><strong>No Detections</strong> — confirms there are no FB codes on this sheet at all. Submits with 0 markers and a distinct status so it's distinguishable from an accidental empty submit.</p>
+      <p><strong>Skip</strong> — moves on without recording anything. The sheet is not marked as reviewed.</p>
+      <h4>Other Controls</h4>
+      <p><strong>Undo Last / Clear All</strong> — remove your most recent marker or all markers for the current sheet.</p>
+      <p><strong>Unlink Panning</strong> — decouples the two panels so you can pan and zoom them independently. Re-click to sync them again.</p>
+      <p><strong>Reset Zoom</strong> — returns both panels to the default full-sheet view.</p>
+      <p><strong>Flag for Review</strong> — marks the sheet for expert follow-up and reveals a free-text notes field.</p>
+      <p><strong>Redo Sheets</strong> — select previously submitted sheets to reopen and revise your answers.</p>
     </div>
   </div>
 </div>
@@ -318,13 +382,10 @@ function loadSheet(s){
   try{if(osdA)osdA.destroy();}catch(e){console.warn('osdA destroy:',e);}osdA=null;
   try{if(osdC)osdC.destroy();}catch(e){console.warn('osdC destroy:',e);}osdC=null;
 
-  // Remove any lingering viewer elements, then create fresh containers
-  mconA.querySelectorAll('.osdv').forEach(el=>el.remove());
-  mconC.querySelectorAll('.osdv').forEach(el=>el.remove());
-  const elA=document.createElement('div');elA.className='osdv';mconA.prepend(elA);
-  const elC=document.createElement('div');elC.className='osdv';mconC.prepend(elC);
+  const elA=document.getElementById('osd-a');
+  const elC=document.getElementById('osd-c');
 
-  const common={showNavigationControl:false,gestureSettingsMouse:{clickToZoom:false},
+  const common={showNavigationControl:false,gestureSettingsMouse:{clickToZoom:false,dblClickToZoom:false},
     animationTime:.25,minZoomLevel:.1,maxZoomLevel:20,visibilityRatio:.4,
     constrainDuringPan:false,blendTime:.1};
 
@@ -356,7 +417,7 @@ function loadSheet(s){
   osdA.addHandler('update-viewport',reposDetections);
   osdA.addHandler('animation',reposDetections);
 
-  osdC.addHandler('canvas-click',function(e){
+  osdC.addHandler('canvas-double-click',function(e){
     if(!marking||!cur)return;
     e.preventDefaultAction=true;
     const item=osdC.world.getItemAt(0);if(!item)return;
@@ -461,19 +522,66 @@ async function submit(){
   if(!cur){toast('No sheet loaded','er');return;}
   const btn=document.getElementById('btn-submit');
   btn.disabled=true;
-  const row=buildRow('reviewed');
   try{
-    await sendRow(row);
+    await sendRow(buildRow('reviewed'));
     markReviewed(cur.atlas_id+'_'+cur.page);
     sessRev++;document.getElementById('sr').textContent=sessRev;
     toast(`Submitted — ${markers.length} code(s) recorded`,'ok');
-    const nextIdx=document.getElementById('hs').selectedIndex+1;
     refreshCity();updateProg(cur.state);
-    const sel=document.getElementById('hs');
-    if(nextIdx<sel.options.length){sel.selectedIndex=nextIdx;onSheet();}
+    advanceAfterSubmit();
   }catch(e){toast('Submit failed: '+e.message,'er');console.error(e);}
   finally{btn.disabled=false;}
 }
+
+async function submitNoDetections(){
+  if(!cur){toast('No sheet loaded','er');return;}
+  const btn=document.getElementById('btn-nodet');
+  btn.disabled=true;
+  markers=[];document.getElementById('mkov').innerHTML='';updCount();
+  try{
+    await sendRow(buildRow('no_detections'));
+    markReviewed(cur.atlas_id+'_'+cur.page);
+    sessRev++;document.getElementById('sr').textContent=sessRev;
+    toast('Confirmed — no FB codes on this sheet','ok');
+    refreshCity();updateProg(cur.state);
+    advanceAfterSubmit();
+  }catch(e){toast('Submit failed: '+e.message,'er');console.error(e);}
+  finally{btn.disabled=false;}
+}
+
+function advanceAfterSubmit(){
+  const hsSel=document.getElementById('hs');
+  const nextIdx=hsSel.selectedIndex+1;
+  if(nextIdx<hsSel.options.length){hsSel.selectedIndex=nextIdx;onSheet();return;}
+  const st=document.getElementById('ss').value;
+  const cities=[...new Set(manifest.filter(s=>s.state===st).map(s=>s.city))].sort();
+  const curCityIdx=cities.indexOf(document.getElementById('cs').value);
+  if(curCityIdx>=0&&curCityIdx<cities.length-1){advanceToCity(cities[curCityIdx+1],st);return;}
+  const states=[...new Set(manifest.map(s=>s.state))].sort();
+  const curStIdx=states.indexOf(st);
+  if(curStIdx>=0&&curStIdx<states.length-1){
+    const nextSt=states[curStIdx+1];
+    const firstCity=[...new Set(manifest.filter(s=>s.state===nextSt).map(s=>s.city))].sort()[0];
+    advanceToCity(firstCity,nextSt);
+  }
+}
+
+function advanceToCity(city,state){
+  const stSel=document.getElementById('ss'),csSel=document.getElementById('cs'),hsSel=document.getElementById('hs');
+  if(stSel.value!==state){stSel.value=state;onState();}
+  csSel.value=city;onCity();
+  if(hsSel.options.length>1){hsSel.selectedIndex=1;onSheet();}
+  showNewTownModal(city,state);
+}
+
+function showNewTownModal(city,state){
+  document.getElementById('tm-city').textContent=city;
+  document.getElementById('tm-state').textContent=state;
+  document.getElementById('town-modal').style.display='flex';
+}
+
+function showInfo(){document.getElementById('info-modal').style.display='flex';}
+function closeInfo(){document.getElementById('info-modal').style.display='none';}
 
 function openRedo(){
   const rev=getReviewed();
