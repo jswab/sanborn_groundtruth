@@ -393,12 +393,15 @@ function loadSheet(s){
   document.getElementById('det-ov').innerHTML='';
   detections=s.pipeline_detections||[];
 
+  const imgUrl=s.loc_clean_url||s.annotated_url;
+  if(!s.loc_clean_url)toast('LOC image unavailable — showing annotated fallback');
+
   showLoad(true);let loaded=0;
   function onO(){if(++loaded>=2)showLoad(false);}
   setTimeout(()=>showLoad(false),10000);
 
-  osdA=OpenSeadragon({element:elA,...common,tileSources:{type:'image',url:s.loc_clean_url}});
-  osdC=OpenSeadragon({element:elC,...common,tileSources:{type:'image',url:s.loc_clean_url}});
+  osdA=OpenSeadragon({element:elA,...common,tileSources:{type:'image',url:imgUrl}});
+  osdC=OpenSeadragon({element:elC,...common,tileSources:{type:'image',url:imgUrl}});
 
   osdA.addOnceHandler('open',onO);
   osdA.addOnceHandler('open',()=>drawDetections(detections));
