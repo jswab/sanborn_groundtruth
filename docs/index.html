@@ -196,10 +196,11 @@ textarea#notes:focus{border-color:var(--rust)}
 <div id="toast"></div>
 <script src="config.js"></script>
 <script>
-const APP_VERSION='v1.3';
+const APP_VERSION='v1.4';
 const APP_UPDATED='2026-05-27T00:00:00';
 let manifest=[],cur=null,markers=[],marking=true,synced=true,syncLock=false,flagged=false;
 let osdA=null,osdC=null,sessRev=0,sessSk=0,user=null;
+let mconA=null,mconC=null;
 
 async function boot(){
   const sel=document.getElementById('lu');
@@ -224,6 +225,8 @@ function doLogin(){
 }
 
 function initApp(){
+  mconA=document.querySelector('.mpanel .mcon');
+  mconC=document.getElementById('cc');
   const sel=document.getElementById('ss');
   [...new Set(manifest.map(s=>s.state))].sort().forEach(st=>{
     const o=document.createElement('option');o.value=st;o.textContent=st;sel.appendChild(o);
@@ -270,17 +273,14 @@ function updateProg(st){
 }
 
 function loadSheet(s){
-  // Capture parent refs before destroying (destroy() may remove the child elements)
-  const mconA=document.querySelector('.mpanel .mcon');
+  try{if(osdA)osdA.destroy();}catch(e){console.warn('osdA destroy:',e);}osdA=null;
+  try{if(osdC)osdC.destroy();}catch(e){console.warn('osdC destroy:',e);}osdC=null;
 
-  if(osdA){osdA.destroy();osdA=null;}
-  if(osdC){osdC.destroy();osdC=null;}
-
-  // Always remove and recreate containers to guarantee a clean DOM node for OSD
-  const oldA=document.getElementById('osd-a');if(oldA)oldA.remove();
-  const oldC=document.getElementById('osd-c');if(oldC)oldC.remove();
-  const elA=document.createElement('div');elA.id='osd-a';elA.className='osdv';mconA.prepend(elA);
-  const elC=document.createElement('div');elC.id='osd-c';elC.className='osdv';document.getElementById('cc').prepend(elC);
+  // Remove any lingering viewer elements, then create fresh containers
+  mconA.querySelectorAll('.osdv').forEach(el=>el.remove());
+  mconC.querySelectorAll('.osdv').forEach(el=>el.remove());
+  const elA=document.createElement('div');elA.className='osdv';mconA.prepend(elA);
+  const elC=document.createElement('div');elC.className='osdv';mconC.prepend(elC);
 
   const common={showNavigationControl:false,gestureSettingsMouse:{clickToZoom:false},
     animationTime:.25,minZoomLevel:.1,maxZoomLevel:20,visibilityRatio:.4,
@@ -290,8 +290,8 @@ function loadSheet(s){
   function onO(){if(++loaded>=2)showLoad(false);}
   setTimeout(()=>showLoad(false),10000);
 
-  osdA=OpenSeadragon({id:'osd-a',...common,tileSources:{type:'image',url:s.annotated_url}});
-  osdC=OpenSeadragon({id:'osd-c',...common,tileSources:{type:'image',url:s.loc_clean_url}});
+  osdA=OpenSeadragon({element:elA,...common,tileSources:{type:'image',url:s.annotated_url}});
+  osdC=OpenSeadragon({element:elC,...common,tileSources:{type:'image',url:s.loc_clean_url}});
 
   osdA.addOnceHandler('open',onO);
   osdC.addOnceHandler('open',onO);
