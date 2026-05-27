@@ -93,6 +93,24 @@ textarea#notes:focus{border-color:var(--rust)}
 #loading{position:fixed;inset:0;background:rgba(26,61,26,.65);display:none;align-items:center;justify-content:center;z-index:200}
 #loading.show{display:flex}
 .lbox2{background:var(--paper);border:2px solid var(--gold);padding:28px 44px;font-family:'IBM Plex Mono',monospace;font-size:.85rem;color:var(--brown);letter-spacing:.05em}
+
+#redo-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:400;background:rgba(13,31,13,.6)}
+.rmodal{background:var(--paper);border:2px solid var(--gold);width:500px;max-width:95vw;max-height:80vh;display:flex;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,.4)}
+.rmodal-head{background:var(--brown);color:var(--cream);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;flex-shrink:0}
+.rmodal-head button{background:none;border:none;color:var(--cream);font-size:1.2rem;cursor:pointer;line-height:1;padding:0 2px}
+.rmodal-acts{padding:10px 16px;display:flex;gap:8px;border-bottom:1px solid var(--border);flex-shrink:0}
+.rmodal-acts button{padding:5px 12px;border:1.5px solid var(--border);background:var(--cream);font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;color:var(--brown)}
+.rmodal-acts button:hover{background:var(--paper);border-color:var(--brown)}
+#redo-list{overflow-y:auto;flex:1}
+.redo-row{display:flex;align-items:center;gap:10px;padding:9px 16px;cursor:pointer;border-bottom:1px solid rgba(141,184,141,.25)}
+.redo-row:hover{background:var(--cream)}
+.redo-row input{flex-shrink:0;accent-color:var(--green);width:14px;height:14px;cursor:pointer}
+.redo-sheet{font-family:'IBM Plex Sans',sans-serif;font-size:.82rem;color:var(--ink)}
+.rmodal-foot{padding:12px 16px;border-top:1px solid var(--border);flex-shrink:0;display:flex;gap:8px;align-items:center}
+.rmodal-foot .rcount{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--muted);flex:1}
+.rmodal-foot button{padding:9px 18px;background:var(--rust);color:#fff;border:none;font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+.rmodal-foot button:hover{background:var(--brown)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
 </style>
 </head>
 <body>
@@ -181,7 +199,7 @@ textarea#notes:focus{border-color:var(--rust)}
       <textarea id="notes" placeholder="Any observations about this sheet…"></textarea>
     </div>
     <div class="sbs">
-      <button class="btn pr" onclick="submit()"><span class="ico">✓</span>Submit &amp; Next Sheet</button>
+      <button class="btn pr" id="btn-submit" onclick="submit()"><span class="ico">✓</span>Submit &amp; Next Sheet</button>
       <button class="btn" onclick="skip()"><span class="ico">→</span>Skip This Sheet</button>
       <button class="btn flag" id="btn-flag" onclick="toggleFlag()"><span class="ico">⚑</span>Flag for Review</button>
     </div>
@@ -189,6 +207,25 @@ textarea#notes:focus{border-color:var(--rust)}
       <h3>Session</h3>
       <div class="srow"><span class="sk">Reviewed</span><span class="sv" id="sr">0</span></div>
       <div class="srow"><span class="sk">Skipped</span><span class="sv" id="sk2">0</span></div>
+      <button class="btn" style="margin-top:10px" onclick="openRedo()"><span class="ico">↺</span>Redo Sheets…</button>
+    </div>
+  </div>
+</div>
+
+<div id="redo-modal">
+  <div class="rmodal">
+    <div class="rmodal-head">
+      <span>Mark Sheets for Redo</span>
+      <button onclick="closeRedo()">×</button>
+    </div>
+    <div class="rmodal-acts">
+      <button onclick="redoSelectAll()">Select All</button>
+      <button onclick="redoClearAll()">Clear</button>
+    </div>
+    <div id="redo-list"></div>
+    <div class="rmodal-foot">
+      <span class="rcount" id="redo-count">0 selected</span>
+      <button onclick="confirmRedo()">Mark for Redo</button>
     </div>
   </div>
 </div>
@@ -196,7 +233,7 @@ textarea#notes:focus{border-color:var(--rust)}
 <div id="toast"></div>
 <script src="config.js"></script>
 <script>
-const APP_VERSION='v1.5';
+const APP_VERSION='v1.6';
 const APP_UPDATED='2026-05-27T00:00:00';
 let manifest=[],cur=null,markers=[],marking=true,synced=true,syncLock=false,flagged=false;
 let osdA=null,osdC=null,sessRev=0,sessSk=0,user=null;
@@ -406,6 +443,8 @@ function resetZoom(){if(osdA)osdA.viewport.goHome(true);if(osdC)osdC.viewport.go
 
 async function submit(){
   if(!cur){toast('No sheet loaded','er');return;}
+  const btn=document.getElementById('btn-submit');
+  btn.disabled=true;
   const row=buildRow('reviewed');
   try{
     await sendRow(row);
@@ -417,6 +456,70 @@ async function submit(){
     const sel=document.getElementById('hs');
     if(nextIdx<sel.options.length){sel.selectedIndex=nextIdx;onSheet();}
   }catch(e){toast('Submit failed: '+e.message,'er');console.error(e);}
+  finally{btn.disabled=false;}
+}
+
+function openRedo(){
+  const rev=getReviewed();
+  if(!rev.size){toast('No reviewed sheets to redo','');return;}
+  const list=document.getElementById('redo-list');
+  list.innerHTML='';
+  const sheets=manifest
+    .filter(s=>rev.has(s.atlas_id+'_'+s.page))
+    .sort((a,b)=>a.state.localeCompare(b.state)||a.city.localeCompare(b.city)||a.year-b.year);
+  sheets.forEach(s=>{
+    const k=s.atlas_id+'_'+s.page;
+    const lbl=document.createElement('label');
+    lbl.className='redo-row';
+    const cb=document.createElement('input');
+    cb.type='checkbox';cb.value=k;
+    cb.addEventListener('change',updateRedoCount);
+    const sp=document.createElement('span');
+    sp.className='redo-sheet';
+    sp.textContent=`${s.state} · ${s.city} · ${s.year} · ${s.sheet_label||'p.'+s.page}`;
+    lbl.appendChild(cb);lbl.appendChild(sp);
+    list.appendChild(lbl);
+  });
+  updateRedoCount();
+  document.getElementById('redo-modal').style.display='flex';
+}
+
+function closeRedo(){document.getElementById('redo-modal').style.display='none';}
+
+function redoSelectAll(){
+  document.querySelectorAll('#redo-list input').forEach(cb=>cb.checked=true);
+  updateRedoCount();
+}
+function redoClearAll(){
+  document.querySelectorAll('#redo-list input').forEach(cb=>cb.checked=false);
+  updateRedoCount();
+}
+function updateRedoCount(){
+  const n=document.querySelectorAll('#redo-list input:checked').length;
+  document.getElementById('redo-count').textContent=`${n} selected`;
+}
+
+async function confirmRedo(){
+  const selected=[...document.querySelectorAll('#redo-list input:checked')].map(cb=>cb.value);
+  if(!selected.length){toast('No sheets selected','');return;}
+  if(!confirm(`Mark ${selected.length} sheet(s) for redo? This will remove them from your reviewed list.`))return;
+  const rev=getReviewed();
+  for(const k of selected){
+    const s=manifest.find(x=>x.atlas_id+'_'+x.page===k);
+    if(!s)continue;
+    try{await sendRow({
+      timestamp:new Date().toISOString(),reviewer:user,
+      atlas_id:s.atlas_id,page:s.page,state:s.state,city:s.city,year:s.year,
+      sheet_label:s.sheet_label||'p.'+s.page,pipeline_count:s.pipeline_count,
+      human_count:'',click_coordinates:'',notes:'',flagged:'',status:'redo_requested'
+    });}catch(e){}
+    rev.delete(k);
+  }
+  localStorage.setItem('sanborn_gt',JSON.stringify([...rev]));
+  closeRedo();
+  refreshCity();
+  if(cur)updateProg(cur.state);
+  toast(`${selected.length} sheet(s) queued for redo`,'ok');
 }
 
 async function skip(){
