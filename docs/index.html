@@ -11,9 +11,9 @@
 
 <style>
 :root {
-  --cream:#f5f0e8;--paper:#ede7d9;--brown:#3d2b1f;--rust:#a0432a;
-  --gold:#c8971e;--ink:#1a1209;--muted:#7a6a58;--border:#c4b49a;
-  --green:#2e6b3e;--blue:#1e3f6b;--panel:#faf7f2;
+  --cream:#f0f5f0;--paper:#e2ede2;--brown:#1a3d1a;--rust:#2e6b3e;
+  --gold:#5a9e5a;--ink:#0d1f0d;--muted:#4a6b4a;--border:#8db88d;
+  --green:#2e6b3e;--blue:#1e3f6b;--panel:#f2faf2;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'IBM Plex Sans',sans-serif;background:var(--cream);color:var(--ink);height:100vh;overflow:hidden;display:flex;flex-direction:column}
@@ -27,12 +27,12 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--cream);color:var(--
 .lbox input:focus,.lbox select:focus{border-color:var(--rust)}
 .lbtn{width:100%;padding:12px;background:var(--rust);color:#fff;border:none;font-family:'IBM Plex Mono',monospace;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
 .lbtn:hover{background:var(--brown)}
-.lerr{background:#f5e0da;border:1px solid var(--rust);color:var(--rust);font-size:.82rem;padding:8px 12px;margin-bottom:16px;display:none}
+.lerr{background:#dff0df;border:1px solid var(--rust);color:var(--rust);font-size:.82rem;padding:8px 12px;margin-bottom:16px;display:none}
 
 #topbar{background:var(--brown);color:var(--cream);padding:0 20px;height:50px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;border-bottom:2px solid var(--gold)}
 #topbar h1{font-family:'Playfair Display',serif;font-size:1.05rem}
 #tb-meta{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--gold);letter-spacing:.04em}
-#tb-user{font-family:'IBM Plex Mono',monospace;font-size:.72rem;background:rgba(200,151,30,.15);border:1px solid var(--gold);color:var(--gold);padding:3px 10px}
+#tb-user{font-family:'IBM Plex Mono',monospace;font-size:.72rem;background:rgba(90,158,90,.15);border:1px solid var(--gold);color:var(--gold);padding:3px 10px}
 
 #selbar{background:var(--paper);border-bottom:1px solid var(--border);padding:8px 20px;display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap}
 #selbar label{font-size:.72rem;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
@@ -49,7 +49,7 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--cream);color:var(--
 .plabel.ann{color:var(--rust)}.plabel.cln{color:var(--blue)}
 #syncbadge{font-family:'IBM Plex Mono',monospace;font-size:.63rem;color:var(--green);padding:2px 7px;background:rgba(46,107,62,.1);border:1px solid rgba(46,107,62,.3);margin-left:auto;letter-spacing:.04em}
 #syncbadge.off{color:var(--muted);background:transparent;border-color:var(--border)}
-.mcon{flex:1;position:relative;background:#2a2018}
+.mcon{flex:1;position:relative;background:#1a2e1a}
 .osdv{width:100%;height:100%}
 #mkov{position:absolute;inset:0;pointer-events:none;z-index:10}
 .mk{position:absolute;width:24px;height:24px;transform:translate(-50%,-50%);pointer-events:all}
@@ -78,6 +78,8 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--cream);color:var(--
 .btn.pr:hover{background:#245530;border-color:#245530}
 .btn.dg{color:var(--rust);border-color:var(--rust);background:transparent}
 .btn.dg:hover{background:var(--rust);color:#fff}
+.btn.flag{color:#8b4513;border-color:#c8781a;background:transparent}
+.btn.flag.on{background:#c8781a;color:#fff;border-color:#c8781a}
 .btn .ico{width:14px;text-align:center;flex-shrink:0}
 textarea#notes{width:100%;min-height:65px;padding:7px;border:1.5px solid var(--border);background:var(--cream);font-family:'IBM Plex Sans',sans-serif;font-size:.8rem;color:var(--ink);resize:vertical;outline:none;margin-top:4px}
 textarea#notes:focus{border-color:var(--rust)}
@@ -85,9 +87,9 @@ textarea#notes:focus{border-color:var(--rust)}
 #toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--brown);color:var(--cream);font-family:'IBM Plex Mono',monospace;font-size:.76rem;padding:10px 24px;border-left:3px solid var(--gold);transition:transform .3s ease;z-index:500;white-space:nowrap;pointer-events:none}
 #toast.show{transform:translateX(-50%) translateY(0)}
 #toast.ok{border-left-color:var(--green)}
-#toast.er{border-left-color:var(--rust)}
+#toast.er{border-left-color:#a0432a}
 
-#loading{position:fixed;inset:0;background:rgba(61,43,31,.65);display:none;align-items:center;justify-content:center;z-index:200}
+#loading{position:fixed;inset:0;background:rgba(26,61,26,.65);display:none;align-items:center;justify-content:center;z-index:200}
 #loading.show{display:flex}
 .lbox2{background:var(--paper);border:2px solid var(--gold);padding:28px 44px;font-family:'IBM Plex Mono',monospace;font-size:.85rem;color:var(--brown);letter-spacing:.05em}
 </style>
@@ -179,6 +181,7 @@ textarea#notes:focus{border-color:var(--rust)}
     <div class="sbs">
       <button class="btn pr" onclick="submit()"><span class="ico">✓</span>Submit &amp; Next Sheet</button>
       <button class="btn" onclick="skip()"><span class="ico">→</span>Skip This Sheet</button>
+      <button class="btn flag" id="btn-flag" onclick="toggleFlag()"><span class="ico">⚑</span>Flag for Review</button>
     </div>
     <div class="sbs">
       <h3>Session</h3>
@@ -191,7 +194,7 @@ textarea#notes:focus{border-color:var(--rust)}
 <div id="toast"></div>
 <script src="config.js"></script>
 <script>
-let manifest=[],cur=null,markers=[],marking=true,synced=true,syncLock=false;
+let manifest=[],cur=null,markers=[],marking=true,synced=true,syncLock=false,flagged=false;
 let osdA=null,osdC=null,sessRev=0,sessSk=0,user=null;
 
 async function boot(){
@@ -305,6 +308,9 @@ function loadSheet(s){
   document.getElementById('sc-pipe').textContent=s.pipeline_count;
   document.getElementById('sc-hu').textContent='0';
   document.getElementById('tb-meta').textContent=`${s.city}, ${s.state} · ${s.year} · ${s.sheet_label||'p.'+s.page}`;
+  flagged=false;
+  document.getElementById('btn-flag').className='btn flag';
+  document.getElementById('btn-flag').innerHTML='<span class="ico">⚑</span>Flag for Review';
   showLoad(true);let loaded=0;
   function onO(){if(++loaded>=2)showLoad(false);}
   osdA.addOnceHandler('open',onO);osdC.addOnceHandler('open',onO);
@@ -367,6 +373,18 @@ function toggleSync(){
   else{btn.innerHTML='<span class="ico">⇄</span>Link Panning';b.className='off';b.textContent='⇄ Unlinked';}
 }
 
+function toggleFlag(){
+  flagged=!flagged;
+  const btn=document.getElementById('btn-flag');
+  if(flagged){
+    btn.className='btn flag on';
+    btn.innerHTML='<span class="ico">⚑</span>Flagged for Review';
+  }else{
+    btn.className='btn flag';
+    btn.innerHTML='<span class="ico">⚑</span>Flag for Review';
+  }
+}
+
 function resetZoom(){if(osdA)osdA.viewport.goHome(true);if(osdC)osdC.viewport.goHome(true);}
 
 async function submit(){
@@ -397,7 +415,9 @@ function buildRow(status){
     pipeline_count:cur.pipeline_count,
     human_count:status==='skipped'?'':markers.length,
     click_coordinates:status==='skipped'?'':JSON.stringify(markers.map(m=>({x_pct:+m.xp.toFixed(5),y_pct:+m.yp.toFixed(5)}))),
-    notes:document.getElementById('notes').value.trim(),status
+    notes:document.getElementById('notes').value.trim(),
+    flagged:flagged?'YES':'',
+    status
   };
 }
 
