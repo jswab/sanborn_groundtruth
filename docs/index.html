@@ -134,6 +134,7 @@ textarea#notes:focus{border-color:var(--rust)}
 <div id="topbar">
   <h1>Sanborn Ground Truth Reviewer</h1>
   <div id="tb-meta"></div>
+  <div id="tb-reviewed" style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--gold);letter-spacing:.04em"></div>
   <div id="tb-user">Not signed in</div>
 </div>
 
@@ -233,7 +234,7 @@ textarea#notes:focus{border-color:var(--rust)}
 <div id="toast"></div>
 <script src="config.js"></script>
 <script>
-const APP_VERSION='v1.7';
+const APP_VERSION='v1.8';
 const APP_UPDATED='2026-05-27T14:14:00';
 let manifest=[],cur=null,markers=[],marking=true,synced=true,syncLock=false,flagged=false;
 let osdA=null,osdC=null,sessRev=0,sessSk=0,user=null;
@@ -264,6 +265,7 @@ function doLogin(){
 function initApp(){
   mconA=document.querySelector('.mpanel .mcon');
   mconC=document.getElementById('cc');
+  updateTotalCount();
   const sel=document.getElementById('ss');
   [...new Set(manifest.map(s=>s.state))].sort().forEach(st=>{
     const o=document.createElement('option');o.value=st;o.textContent=st;sel.appendChild(o);
@@ -523,6 +525,7 @@ async function confirmRedo(){
   closeRedo();
   refreshCity();
   if(cur)updateProg(cur.state);
+  updateTotalCount();
   toast(`${selected.length} sheet(s) queued for redo`,'ok');
 }
 
@@ -576,6 +579,11 @@ function getReviewed(){
 }
 function markReviewed(k){
   const s=getReviewed();s.add(k);localStorage.setItem('sanborn_gt',JSON.stringify([...s]));
+  updateTotalCount();
+}
+function updateTotalCount(){
+  const n=getReviewed().size;
+  document.getElementById('tb-reviewed').textContent=n?`✓ ${n} reviewed`:'';
 }
 function showLoad(v){document.getElementById('loading').classList.toggle('show',v);}
 let tTimer;
