@@ -196,7 +196,7 @@ textarea#notes:focus{border-color:var(--rust)}
 <div id="toast"></div>
 <script src="config.js"></script>
 <script>
-const APP_VERSION='v1.1';
+const APP_VERSION='v1.2';
 const APP_UPDATED='2026-05-27T00:00:00';
 let manifest=[],cur=null,markers=[],marking=true,synced=true,syncLock=false,flagged=false;
 let osdA=null,osdC=null,sessRev=0,sessSk=0,user=null;
@@ -286,8 +286,16 @@ function loadSheet(s){
   const common={showNavigationControl:false,gestureSettingsMouse:{clickToZoom:false},
     animationTime:.25,minZoomLevel:.1,maxZoomLevel:20,visibilityRatio:.4,
     constrainDuringPan:false,blendTime:.1};
-  osdA=OpenSeadragon({id:'osd-a',...common});
-  osdC=OpenSeadragon({id:'osd-c',...common});
+
+  showLoad(true);let loaded=0;
+  function onO(){if(++loaded>=2)showLoad(false);}
+  setTimeout(()=>showLoad(false),10000);
+
+  osdA=OpenSeadragon({id:'osd-a',...common,tileSources:{type:'image',url:s.annotated_url}});
+  osdC=OpenSeadragon({id:'osd-c',...common,tileSources:{type:'image',url:s.loc_clean_url}});
+
+  osdA.addOnceHandler('open',onO);
+  osdC.addOnceHandler('open',onO);
 
   function syncFrom(src,tgt){
     if(!synced||syncLock)return;syncLock=true;
@@ -327,12 +335,6 @@ function loadSheet(s){
   flagged=false;
   document.getElementById('btn-flag').className='btn flag';
   document.getElementById('btn-flag').innerHTML='<span class="ico">⚑</span>Flag for Review';
-  showLoad(true);let loaded=0;
-  function onO(){if(++loaded>=2)showLoad(false);}
-  osdA.addOnceHandler('open',onO);osdC.addOnceHandler('open',onO);
-  setTimeout(()=>showLoad(false),10000);
-  osdA.open({type:'image',url:s.annotated_url});
-  osdC.open({type:'image',url:s.loc_clean_url});
 }
 
 function addMarker(xp,yp){
