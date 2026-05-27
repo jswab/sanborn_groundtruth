@@ -273,11 +273,15 @@ function loadSheet(s){
   if(osdA){osdA.destroy();osdA=null;}
   if(osdC){osdC.destroy();osdC=null;}
 
-  // destroy() removes the container elements from the DOM — recreate them
-  const elA=document.createElement('div');elA.id='osd-a';elA.className='osdv';
-  document.querySelector('.mpanel .mcon').prepend(elA);
-  const elC=document.createElement('div');elC.id='osd-c';elC.className='osdv';
-  document.getElementById('cc').prepend(elC);
+  // destroy() removes the container elements from the DOM — recreate them only when needed
+  if(!document.getElementById('osd-a')){
+    const elA=document.createElement('div');elA.id='osd-a';elA.className='osdv';
+    document.querySelector('.mpanel .mcon').prepend(elA);
+  }
+  if(!document.getElementById('osd-c')){
+    const elC=document.createElement('div');elC.id='osd-c';elC.className='osdv';
+    document.getElementById('cc').prepend(elC);
+  }
 
   const common={showNavigationControl:false,gestureSettingsMouse:{clickToZoom:false},
     animationTime:.25,minZoomLevel:.1,maxZoomLevel:20,visibilityRatio:.4,
