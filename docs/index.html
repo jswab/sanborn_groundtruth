@@ -28,6 +28,7 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--cream);color:var(--
 .lbtn{width:100%;padding:12px;background:var(--rust);color:#fff;border:none;font-family:'IBM Plex Mono',monospace;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
 .lbtn:hover{background:var(--brown)}
 .lerr{background:#dff0df;border:1px solid var(--rust);color:var(--rust);font-size:.82rem;padding:8px 12px;margin-bottom:16px;display:none}
+#lver{margin-top:20px;padding-top:14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.05em}
 
 #topbar{background:var(--brown);color:var(--cream);padding:0 20px;height:50px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;border-bottom:2px solid var(--gold)}
 #topbar h1{font-family:'Playfair Display',serif;font-size:1.05rem}
@@ -106,6 +107,7 @@ textarea#notes:focus{border-color:var(--rust)}
     <label>Password</label>
     <input type="password" id="lp" placeholder="Enter password">
     <button class="lbtn" onclick="doLogin()">Sign In →</button>
+    <div id="lver"></div>
   </div>
 </div>
 
@@ -194,6 +196,8 @@ textarea#notes:focus{border-color:var(--rust)}
 <div id="toast"></div>
 <script src="config.js"></script>
 <script>
+const APP_VERSION='v1.1';
+const APP_UPDATED='2026-05-27T00:00:00';
 let manifest=[],cur=null,markers=[],marking=true,synced=true,syncLock=false,flagged=false;
 let osdA=null,osdC=null,sessRev=0,sessSk=0,user=null;
 
@@ -201,6 +205,8 @@ async function boot(){
   const sel=document.getElementById('lu');
   CONFIG.users.forEach(u=>{const o=document.createElement('option');o.value=u.name;o.textContent=u.name;sel.appendChild(o);});
   document.getElementById('lp').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
+  const d=new Date(APP_UPDATED);
+  document.getElementById('lver').innerHTML=`<span>${APP_VERSION}</span><span>Updated ${d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})} ${d.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'})}</span>`;
   try{
     const r=await fetch('groundtruth_manifest.json');
     if(!r.ok)throw new Error('HTTP '+r.status);
@@ -222,7 +228,6 @@ function initApp(){
   [...new Set(manifest.map(s=>s.state))].sort().forEach(st=>{
     const o=document.createElement('option');o.value=st;o.textContent=st;sel.appendChild(o);
   });
-  initOSD();
 }
 
 function onState(){
@@ -264,7 +269,16 @@ function updateProg(st){
   document.getElementById('prog').innerHTML=`<span>${done}</span> / ${tot} reviewed in ${st}`;
 }
 
-function initOSD(){
+function loadSheet(s){
+  if(osdA){osdA.destroy();osdA=null;}
+  if(osdC){osdC.destroy();osdC=null;}
+
+  // destroy() removes the container elements from the DOM — recreate them
+  const elA=document.createElement('div');elA.id='osd-a';elA.className='osdv';
+  document.querySelector('.mpanel .mcon').prepend(elA);
+  const elC=document.createElement('div');elC.id='osd-c';elC.className='osdv';
+  document.getElementById('cc').prepend(elC);
+
   const common={showNavigationControl:false,gestureSettingsMouse:{clickToZoom:false},
     animationTime:.25,minZoomLevel:.1,maxZoomLevel:20,visibilityRatio:.4,
     constrainDuringPan:false,blendTime:.1};
@@ -293,9 +307,7 @@ function initOSD(){
   });
   osdC.addHandler('update-viewport',reposAll);
   osdC.addHandler('animation',reposAll);
-}
 
-function loadSheet(s){
   cur=s;markers=[];
   document.getElementById('mkov').innerHTML='';
   document.getElementById('notes').value='';
