@@ -305,11 +305,21 @@ textarea#notes:focus{border-color:var(--rust)}
 <div id="toast"></div>
 <script src="config.js"></script>
 <script>
-const APP_VERSION='v1.8';
-const APP_UPDATED='2026-05-27T23:24:44Z';
+const APP_VERSION='v1.9';
+const APP_UPDATED='2026-05-28T00:00:00Z';
 let manifest=[],cur=null,markers=[],marking=true,synced=true,syncLock=false,flagged=false;
 let osdA=null,osdC=null,sessRev=0,sessSk=0,user=null;
-let mconA=null,mconC=null,detections=[];
+let mconA=null,mconC=null,detections=[],loadGen=0;
+
+function probeImage(url,ms=20000){
+  return new Promise((res,rej)=>{
+    const img=new Image();
+    const t=setTimeout(()=>{img.onload=img.onerror=null;rej('timeout');},ms);
+    img.onload=()=>{clearTimeout(t);res();};
+    img.onerror=()=>{clearTimeout(t);rej('error');};
+    img.src=url;
+  });
+}
 
 async function boot(){
   const sel=document.getElementById('lu');
@@ -382,7 +392,8 @@ function updateProg(st){
   document.getElementById('prog').innerHTML=`<span>${done}</span> / ${tot} reviewed in ${st}`;
 }
 
-function loadSheet(s){
+async function loadSheet(s){
+  const gen=++loadGen;
   try{if(osdA)osdA.destroy();}catch(e){console.warn('osdA destroy:',e);}osdA=null;
   try{if(osdC)osdC.destroy();}catch(e){console.warn('osdC destroy:',e);}osdC=null;
 
@@ -397,25 +408,68 @@ function loadSheet(s){
   document.getElementById('det-ov').innerHTML='';
   detections=s.pipeline_detections||[];
 
-  const imgUrl=s.loc_clean_url||s.annotated_url;
-  if(!s.loc_clean_url)toast('LOC image unavailable — showing annotated fallback');
+  cur=s;markers=[];
+  document.getElementById('mkov').innerHTML='';
+  document.getElementById('notes').value='';
+  document.getElementById('notes-section').style.display='none';
+  document.getElementById('empty').style.display='none';
+  document.getElementById('i-city').textContent=s.city;
+  document.getElementById('i-state').textContent=s.state;
+  document.getElementById('i-year').textContent=s.year;
+  document.getElementById('i-sheet').textContent=s.sheet_label||'p.'+s.page;
+  document.getElementById('i-atlas').textContent=s.atlas_id;
+  document.getElementById('sc-pipe').textContent=s.pipeline_count;
+  document.getElementById('sc-hu').textContent='0';
+  document.getElementById('tb-meta').textContent=`${s.city}, ${s.state} · ${s.year} · ${s.sheet_label||'p.'+s.page}`;
+  flagged=false;
+  document.getElementById('btn-flag').className='btn flag';
+  document.getElementById('btn-flag').innerHTML='<span class="ico">⚑</span>Flag for Review';
 
-  showLoad(true);let loaded=0,errShown=false;
-  function onO(){if(++loaded>=2){clearTimeout(slowTimer);showLoad(false);}}
-  function onFail(){if(!errShown){errShown=true;clearTimeout(slowTimer);showLoad(false);toast('Image failed to load — no clean map available for this sheet','er');}}
-  const slowTimer=setTimeout(()=>{
-    const lb=document.querySelector('.lbox2');
-    if(lb)lb.childNodes[0].textContent='Still loading… large image';
-  },8000);
+  const locUrl=s.loc_clean_url;
+  const annUrl=s.annotated_url;
 
+  showLoad(true);
+  const slowHint=setTimeout(()=>{const lb=document.querySelector('.lbox2');if(lb)lb.childNodes[0].textContent='Still loading… large image';},8000);
+
+  let imgUrl=locUrl||annUrl;
+  if(locUrl){
+    try{
+      await probeImage(locUrl,20000);
+    }catch(reason){
+      clearTimeout(slowHint);
+      if(gen!==loadGen)return;
+      if(annUrl){
+        const why=reason==='timeout'?'LOC image timed out':'LOC image unavailable';
+        toast(why+' — retrying with annotated fallback');
+        showLoad(true);
+        try{await probeImage(annUrl,15000);}
+        catch{showLoad(false);toast('Image failed to load for this sheet','er');return;}
+        if(gen!==loadGen)return;
+        imgUrl=annUrl;
+      }else{
+        showLoad(false);toast('Image failed to load for this sheet','er');return;
+      }
+    }
+  }else{
+    if(!annUrl){clearTimeout(slowHint);showLoad(false);toast('No image available for this sheet','er');return;}
+    try{await probeImage(annUrl,15000);}
+    catch{clearTimeout(slowHint);showLoad(false);toast('Image failed to load for this sheet','er');return;}
+    if(gen!==loadGen)return;
+    toast('LOC image unavailable — showing annotated fallback');
+  }
+
+  clearTimeout(slowHint);
+  if(gen!==loadGen)return;
+
+  // Image is now in browser cache; both viewers load from cache instantly
   osdA=OpenSeadragon({element:elA,...common,tileSources:{type:'image',url:imgUrl}});
   osdC=OpenSeadragon({element:elC,...common,tileSources:{type:'image',url:imgUrl}});
 
-  osdA.addOnceHandler('open',onO);
-  osdA.addOnceHandler('open-failed',onFail);
+  let opened=0;
+  function onOpen(){if(++opened>=2)showLoad(false);}
+  osdA.addOnceHandler('open',onOpen);
   osdA.addOnceHandler('open',()=>drawDetections(detections));
-  osdC.addOnceHandler('open',onO);
-  osdC.addOnceHandler('open-failed',onFail);
+  osdC.addOnceHandler('open',onOpen);
 
   function syncFrom(src,tgt){
     if(!synced||syncLock)return;syncLock=true;
@@ -442,22 +496,6 @@ function loadSheet(s){
   });
   osdC.addHandler('update-viewport',reposAll);
   osdC.addHandler('animation',reposAll);
-
-  cur=s;markers=[];
-  document.getElementById('mkov').innerHTML='';
-  document.getElementById('notes').value='';
-  document.getElementById('empty').style.display='none';
-  document.getElementById('i-city').textContent=s.city;
-  document.getElementById('i-state').textContent=s.state;
-  document.getElementById('i-year').textContent=s.year;
-  document.getElementById('i-sheet').textContent=s.sheet_label||'p.'+s.page;
-  document.getElementById('i-atlas').textContent=s.atlas_id;
-  document.getElementById('sc-pipe').textContent=s.pipeline_count;
-  document.getElementById('sc-hu').textContent='0';
-  document.getElementById('tb-meta').textContent=`${s.city}, ${s.state} · ${s.year} · ${s.sheet_label||'p.'+s.page}`;
-  flagged=false;
-  document.getElementById('btn-flag').className='btn flag';
-  document.getElementById('btn-flag').innerHTML='<span class="ico">⚑</span>Flag for Review';
 }
 
 function addMarker(xp,yp){
