@@ -305,21 +305,11 @@ textarea#notes:focus{border-color:var(--rust)}
 <div id="toast"></div>
 <script src="config.js"></script>
 <script>
-const APP_VERSION='v1.9';
+const APP_VERSION='v2.0';
 const APP_UPDATED='2026-05-28T11:17:03Z';
 let manifest=[],cur=null,markers=[],marking=true,synced=true,syncLock=false,flagged=false;
 let osdA=null,osdC=null,sessRev=0,sessSk=0,user=null;
 let mconA=null,mconC=null,detections=[],loadGen=0;
-
-function probeImage(url,ms=20000){
-  return new Promise((res,rej)=>{
-    const img=new Image();
-    const t=setTimeout(()=>{img.onload=img.onerror=null;rej('timeout');},ms);
-    img.onload=()=>{clearTimeout(t);res();};
-    img.onerror=()=>{clearTimeout(t);rej('error');};
-    img.src=url;
-  });
-}
 
 async function boot(){
   const sel=document.getElementById('lu');
@@ -392,7 +382,7 @@ function updateProg(st){
   document.getElementById('prog').innerHTML=`<span>${done}</span> / ${tot} reviewed in ${st}`;
 }
 
-async function loadSheet(s){
+function loadSheet(s){
   const gen=++loadGen;
   try{if(osdA)osdA.destroy();}catch(e){console.warn('osdA destroy:',e);}osdA=null;
   try{if(osdC)osdC.destroy();}catch(e){console.warn('osdC destroy:',e);}osdC=null;
@@ -428,74 +418,85 @@ async function loadSheet(s){
   const locUrl=s.loc_clean_url;
   const annUrl=s.annotated_url;
 
-  showLoad(true);
-  const slowHint=setTimeout(()=>{const lb=document.querySelector('.lbox2');if(lb)lb.childNodes[0].textContent='Still loading… large image';},8000);
+  if(!locUrl&&!annUrl){showLoad(false);toast('No image available for this sheet','er');return;}
+  if(!locUrl)toast('LOC image unavailable — showing annotated fallback');
 
-  let imgUrl=locUrl||annUrl;
-  if(locUrl){
-    try{
-      await probeImage(locUrl,20000);
-    }catch(reason){
-      clearTimeout(slowHint);
-      if(gen!==loadGen)return;
-      if(annUrl){
-        const why=reason==='timeout'?'LOC image timed out':'LOC image unavailable';
-        toast(why+' — retrying with annotated fallback');
-        showLoad(true);
-        try{await probeImage(annUrl,15000);}
-        catch{showLoad(false);toast('Image failed to load for this sheet','er');return;}
-        if(gen!==loadGen)return;
-        imgUrl=annUrl;
+  // tryLoad: let OSD handle the download directly; on failure or timeout, retry with annotated
+  function tryLoad(url, isFinal){
+    if(gen!==loadGen)return;
+    try{if(osdA)osdA.destroy();}catch(e){}osdA=null;
+    try{if(osdC)osdC.destroy();}catch(e){}osdC=null;
+    elA.innerHTML='';elC.innerHTML='';
+
+    osdA=OpenSeadragon({element:elA,...common,tileSources:{type:'image',url}});
+    osdC=OpenSeadragon({element:elC,...common,tileSources:{type:'image',url}});
+
+    let opened=0,settled=false;
+
+    const slowTimer=setTimeout(()=>{
+      const lb=document.querySelector('.lbox2');
+      if(lb)lb.childNodes[0].textContent='Still loading… large image';
+    },8000);
+
+    const hardTimer=setTimeout(()=>{
+      if(settled||gen!==loadGen)return;
+      settled=true;clearTimeout(slowTimer);
+      if(!isFinal&&annUrl&&url!==annUrl){
+        toast('LOC image timed out — using annotated fallback');
+        tryLoad(annUrl,true);
       }else{
-        showLoad(false);toast('Image failed to load for this sheet','er');return;
+        showLoad(false);toast('Image load timed out for this sheet','er');
+      }
+    },30000);
+
+    function onOpen(){
+      if(settled||gen!==loadGen)return;
+      if(++opened>=2){settled=true;clearTimeout(slowTimer);clearTimeout(hardTimer);showLoad(false);}
+    }
+    function onFail(){
+      if(settled||gen!==loadGen)return;
+      settled=true;clearTimeout(slowTimer);clearTimeout(hardTimer);
+      if(!isFinal&&annUrl&&url!==annUrl){
+        toast('LOC image unavailable — retrying with annotated fallback');
+        tryLoad(annUrl,true);
+      }else{
+        showLoad(false);toast('Image failed to load for this sheet','er');
       }
     }
-  }else{
-    if(!annUrl){clearTimeout(slowHint);showLoad(false);toast('No image available for this sheet','er');return;}
-    try{await probeImage(annUrl,15000);}
-    catch{clearTimeout(slowHint);showLoad(false);toast('Image failed to load for this sheet','er');return;}
-    if(gen!==loadGen)return;
-    toast('LOC image unavailable — showing annotated fallback');
+
+    osdA.addOnceHandler('open',onOpen);
+    osdA.addOnceHandler('open-failed',onFail);
+    osdA.addOnceHandler('open',()=>drawDetections(detections));
+    osdC.addOnceHandler('open',onOpen);
+    osdC.addOnceHandler('open-failed',onFail);
+
+    function syncFrom(src,tgt){
+      if(!synced||syncLock)return;syncLock=true;
+      tgt.viewport.zoomTo(src.viewport.getZoom(),null,true);
+      tgt.viewport.panTo(src.viewport.getCenter(),true);
+      syncLock=false;
+    }
+    osdA.addHandler('pan',()=>syncFrom(osdA,osdC));
+    osdA.addHandler('zoom',()=>syncFrom(osdA,osdC));
+    osdC.addHandler('pan',()=>syncFrom(osdC,osdA));
+    osdC.addHandler('zoom',()=>syncFrom(osdC,osdA));
+    osdA.addHandler('update-viewport',reposDetections);
+    osdA.addHandler('animation',reposDetections);
+    osdC.addHandler('canvas-double-click',function(e){
+      if(!marking||!cur)return;
+      e.preventDefaultAction=true;
+      const item=osdC.world.getItemAt(0);if(!item)return;
+      const vp=osdC.viewport.pointFromPixel(e.position);
+      const img=osdC.viewport.viewportToImageCoordinates(vp);
+      const sz=item.getContentSize();
+      addMarker(img.x/sz.x,img.y/sz.y);
+    });
+    osdC.addHandler('update-viewport',reposAll);
+    osdC.addHandler('animation',reposAll);
   }
 
-  clearTimeout(slowHint);
-  if(gen!==loadGen)return;
-
-  // Image is now in browser cache; both viewers load from cache instantly
-  osdA=OpenSeadragon({element:elA,...common,tileSources:{type:'image',url:imgUrl}});
-  osdC=OpenSeadragon({element:elC,...common,tileSources:{type:'image',url:imgUrl}});
-
-  let opened=0;
-  function onOpen(){if(++opened>=2)showLoad(false);}
-  osdA.addOnceHandler('open',onOpen);
-  osdA.addOnceHandler('open',()=>drawDetections(detections));
-  osdC.addOnceHandler('open',onOpen);
-
-  function syncFrom(src,tgt){
-    if(!synced||syncLock)return;syncLock=true;
-    tgt.viewport.zoomTo(src.viewport.getZoom(),null,true);
-    tgt.viewport.panTo(src.viewport.getCenter(),true);
-    syncLock=false;
-  }
-  osdA.addHandler('pan',()=>syncFrom(osdA,osdC));
-  osdA.addHandler('zoom',()=>syncFrom(osdA,osdC));
-  osdC.addHandler('pan',()=>syncFrom(osdC,osdA));
-  osdC.addHandler('zoom',()=>syncFrom(osdC,osdA));
-
-  osdA.addHandler('update-viewport',reposDetections);
-  osdA.addHandler('animation',reposDetections);
-
-  osdC.addHandler('canvas-double-click',function(e){
-    if(!marking||!cur)return;
-    e.preventDefaultAction=true;
-    const item=osdC.world.getItemAt(0);if(!item)return;
-    const vp=osdC.viewport.pointFromPixel(e.position);
-    const img=osdC.viewport.viewportToImageCoordinates(vp);
-    const sz=item.getContentSize();
-    addMarker(img.x/sz.x,img.y/sz.y);
-  });
-  osdC.addHandler('update-viewport',reposAll);
-  osdC.addHandler('animation',reposAll);
+  showLoad(true);
+  tryLoad(locUrl||annUrl,!locUrl);
 }
 
 function addMarker(xp,yp){
