@@ -140,6 +140,7 @@ textarea#notes:focus{border-color:var(--rust)}
 .chip-y{background:#eab30818;color:#a16207;border-color:#eab30855}
 .chip-r{background:#ef444418;color:#b91c1c;border-color:#ef444455}
 .chip-o{background:#f9731618;color:#c2410c;border-color:#f9731655}
+.chip-p{background:#a855f718;color:#7e22ce;border-color:#a855f755}
 </style>
 </head>
 <body>
@@ -283,7 +284,8 @@ textarea#notes:focus{border-color:var(--rust)}
         <span class="chip chip-g">Green ≥ 0.80</span>
         <span class="chip chip-y">Yellow 0.65–0.79</span>
         <span class="chip chip-r">Red &lt; 0.65</span>
-        <span class="chip chip-o">Orange = OCR noise</span><br>
+        <span class="chip chip-o">Orange = OCR noise</span>
+        <span class="chip chip-p">Purple = Female Boarding (full phrase)</span><br>
         Each box shows the detected text. Both panels show the same clean map image.
       </p>
       <h4>Right Panel — Marking</h4>
@@ -765,6 +767,7 @@ function toast(msg,type=''){
   clearTimeout(tTimer);tTimer=setTimeout(()=>{t.className='';},3000);
 }
 function detBoxColor(d){
+  if(d.bucket==='FEMALE_BOARDING')return'#a855f7';
   if(d.bucket==='OCR_NOISE')return'#f97316';
   if(d.confidence>=0.80)return'#22c55e';
   if(d.confidence>=0.65)return'#eab308';
