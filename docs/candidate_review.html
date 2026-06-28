@@ -461,8 +461,9 @@ body {
 
     const done = Object.keys(getVerdicts()).length;
     const remaining = manifest.length - done;
+    const ver = CONFIG.version ? ` · v${CONFIG.version}` : '';
     document.getElementById('login-meta').textContent =
-      `${manifest.length} candidates total · ${remaining} remaining`;
+      `${manifest.length} candidates total · ${remaining} remaining${ver}`;
 
     document.getElementById('btn-start').onclick = () => {
       reviewer = sel.value;
