@@ -644,10 +644,17 @@ body {
       return;
     }
 
+    // Keep buttons disabled until OSD has opened and positioned the map
+    isLoading = true;
+    setVerdictEnabled(false);
+
     // info.json → IIIF tiling (sharp at any zoom); anything else → flat image
     viewer.open(url.endsWith('info.json') ? url : { type: 'image', url });
 
     viewer.addOnceHandler('open', function () {
+      isLoading = false;
+      setVerdictEnabled(true);
+
       const ti = viewer.world.getItemAt(0);
       if (!ti) return;
       const size = ti.getContentSize();
@@ -739,11 +746,14 @@ body {
 
     if (!CONFIG.googleSheetWebAppUrl) return;
 
+    // FormData is a simple content-type that works with no-cors;
+    // JSON with Content-Type:application/json gets stripped by the browser.
+    const fd = new FormData();
+    Object.entries(row).forEach(([k, v]) => fd.append(k, String(v ?? '')));
     fetch(CONFIG.googleSheetWebAppUrl, {
       method: 'POST',
       mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(row),
+      body: fd,
     }).catch(() => {});
   }
 
