@@ -476,6 +476,11 @@ body {
     queue = manifest
       .map((c, i) => ({ c, i }))
       .filter(({ c }) => !done[candidateId(c)])
+      .sort((a, b) => {
+        const aImg = !!(a.c.loc_clean_url || a.c.annotated_url);
+        const bImg = !!(b.c.loc_clean_url || b.c.annotated_url);
+        return bImg - aImg; // candidates with images first
+      })
       .map(({ i }) => i);
     queuePos = 0;
   }
@@ -585,15 +590,15 @@ body {
       const pixY = candidate.candidate_y_pct * size.y;
       currentVpPoint = ti.imageToViewportCoordinates(pixX, pixY);
 
-      // zoom to a ~15% wide window around the candidate
+      // zoom to a ~15% wide window around the candidate, clamped to image edges
       const bounds = ti.getBounds();
-      const hw = bounds.width * 0.08;           // half-width of view window (world units)
+      const hw = bounds.width * 0.08;
       const hh = bounds.height * 0.08;
+      const rx = Math.max(bounds.x, Math.min(bounds.x + bounds.width  - hw * 2, currentVpPoint.x - hw));
+      const ry = Math.max(bounds.y, Math.min(bounds.y + bounds.height - hh * 2, currentVpPoint.y - hh));
       viewer.viewport.fitBoundsWithConstraints(
-        new OpenSeadragon.Rect(
-          currentVpPoint.x - hw, currentVpPoint.y - hh, hw * 2, hh * 2
-        ),
-        true   // immediately, no animation on first load
+        new OpenSeadragon.Rect(rx, ry, hw * 2, hh * 2),
+        true
       );
       drawOverlay();
     });
