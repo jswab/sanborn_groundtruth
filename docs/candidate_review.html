@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FB Candidate Review — Sanborn</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
+<script src="candidate_config.js"></script>
+<style>
+:root {
+  --cream:  #f0f5f0;
+  --paper:  #e2ede2;
+  --brown:  #1a3d1a;
+  --rust:   #2e6b3e;
+  --gold:   #5a9e5a;
+  --ink:    #0d1f0d;
+  --muted:  #4a6b4a;
+  --border: #8db88d;
+  --panel:  #f2faf2;
+  --red:    #c0392b;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── screens ─────────────────────────────────────────────── */
+.screen { display: none; width: 100%; height: 100%; }
+.screen.active { display: flex; }
+
+/* ── login ───────────────────────────────────────────────── */
+#screen-login {
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+}
+
+.login-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2.5rem 3rem;
+  width: min(420px, 92vw);
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.login-card h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--brown);
+  line-height: 1.2;
+}
+
+.login-card .subtitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-top: -.8rem;
+}
+
+.login-card label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  display: block;
+  margin-bottom: .35rem;
+}
+
+.login-card select {
+  width: 100%;
+  padding: .55rem .75rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.95rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M6 8L0 0h12z' fill='%234a6b4a'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  cursor: pointer;
+}
+
+.login-card select:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+.btn-primary {
+  background: var(--rust);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: .7rem 1.4rem;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn-primary:hover { background: var(--brown); }
+
+.login-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ── review screen ───────────────────────────────────────── */
+#screen-review {
+  flex-direction: column;
+  height: 100vh;
+}
+
+.review-header {
+  background: var(--brown);
+  color: #fff;
+  padding: .5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.review-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.progress-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.progress-bar-wrap {
+  flex: 1;
+  background: rgba(255,255,255,.15);
+  border-radius: 2px;
+  height: 6px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: var(--gold);
+  transition: width .3s;
+}
+
+.btn-reset {
+  background: none;
+  border: 1px solid rgba(255,255,255,.35);
+  color: rgba(255,255,255,.75);
+  border-radius: 3px;
+  padding: .25rem .6rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color .15s, color .15s;
+}
+.btn-reset:hover { border-color: #fff; color: #fff; }
+
+/* info strip */
+.info-strip {
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  padding: .45rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.2rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.info-pill {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+.info-pill span {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.badge {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  padding: .1rem .4rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.badge-new   { background: #d4edda; color: #145a2b; }
+.badge-prev  { background: #fff3cd; color: #7a5700; }
+
+/* viewer area */
+.viewer-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+#osd-viewer {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay-canvas {
+  position: absolute;
+  top: 0; left: 0;
+  pointer-events: none;
+}
+
+.no-image-msg {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: var(--paper);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: .75rem;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 2rem;
+}
+.no-image-msg.show { display: flex; }
+.no-image-source {
+  font-size: 0.7rem;
+  color: var(--border);
+  word-break: break-all;
+  max-width: 480px;
+}
+
+/* verdict bar */
+.verdict-bar {
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  padding: .65rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  flex-shrink: 0;
+}
+
+.btn-verdict {
+  border: 2px solid transparent;
+  border-radius: 4px;
+  padding: .6rem 1.4rem;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .1rem;
+  transition: transform .08s, box-shadow .08s;
+  min-width: 100px;
+}
+.btn-verdict:active { transform: scale(.96); }
+.btn-verdict .key-hint {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  opacity: .6;
+}
+
+.btn-yes    { background: #d4edda; color: #145a2b; border-color: #a3d4b0; }
+.btn-yes:hover    { background: #b8ddc2; }
+.btn-no     { background: #fde8e8; color: #7a1a1a; border-color: #f0b8b8; }
+.btn-no:hover     { background: #f4cccc; }
+.btn-unsure { background: #fff3cd; color: #7a5700; border-color: #f0d98a; }
+.btn-unsure:hover { background: #ede4a0; }
+
+/* flash feedback */
+.flash {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .08s;
+  z-index: 100;
+}
+.flash.go { opacity: .18; transition: opacity 0s; }
+.flash.yes    { background: #2a9a50; }
+.flash.no     { background: #c0392b; }
+.flash.unsure { background: #e0a030; }
+
+/* ── done screen ─────────────────────────────────────────── */
+#screen-done {
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+}
+
+.done-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2.5rem 3rem;
+  width: min(420px, 92vw);
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.done-card h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--brown);
+}
+
+.done-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+
+<!-- ── login ─────────────────────────────────────────── -->
+<div id="screen-login" class="screen">
+  <div class="login-card">
+    <div>
+      <h1>FB Candidate Review</h1>
+      <div class="subtitle">Sanborn Fire Insurance Maps</div>
+    </div>
+    <div>
+      <label for="reviewer-select">Reviewer</label>
+      <select id="reviewer-select"></select>
+    </div>
+    <button class="btn-primary" id="btn-start">Begin Review</button>
+    <div class="login-meta" id="login-meta">Loading manifest…</div>
+  </div>
+</div>
+
+<!-- ── review ────────────────────────────────────────── -->
+<div id="screen-review" class="screen">
+  <div class="review-header">
+    <h2>FB Candidate Review</h2>
+    <span class="progress-label" id="progress-label">0 / 0</span>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="progress-bar" style="width:0%"></div>
+    </div>
+    <button class="btn-reset" id="btn-reset">Reset Progress</button>
+  </div>
+
+  <div class="info-strip" id="info-strip">
+    <span class="info-pill">—</span>
+  </div>
+
+  <div class="viewer-area">
+    <div id="osd-viewer"></div>
+    <canvas class="overlay-canvas" id="overlay-canvas"></canvas>
+    <div class="no-image-msg" id="no-image-msg">
+      <div>No image available for this candidate.</div>
+      <div class="no-image-source" id="no-image-source"></div>
+      <div style="margin-top:.5rem;font-size:.75rem;">You may still record a verdict or press <b>U</b> to mark Unsure.</div>
+    </div>
+  </div>
+
+  <div class="verdict-bar">
+    <button class="btn-verdict btn-yes" id="btn-yes">
+      ✓ Yes (FB)
+      <span class="key-hint">Y</span>
+    </button>
+    <button class="btn-verdict btn-no" id="btn-no">
+      ✗ No
+      <span class="key-hint">N</span>
+    </button>
+    <button class="btn-verdict btn-unsure" id="btn-unsure">
+      ? Unsure
+      <span class="key-hint">U</span>
+    </button>
+  </div>
+</div>
+
+<!-- ── done ──────────────────────────────────────────── -->
+<div id="screen-done" class="screen">
+  <div class="done-card">
+    <h1>Review Complete</h1>
+    <p id="done-msg">All candidates reviewed.</p>
+    <button class="btn-primary" id="btn-restart">Reset &amp; Start Over</button>
+  </div>
+</div>
+
+<div class="flash" id="flash"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ── state ────────────────────────────────────────────────
+  const LS_KEY = 'sanborn_candidate_verdicts_v1';
+  let manifest = [];
+  let queue = [];       // indices into manifest still to review
+  let queuePos = 0;     // current position in queue
+  let reviewer = '';
+  let viewer = null;
+  let overlayCanvas = null;
+  let currentVpPoint = null;
+  let verdictInFlight = false;
+
+  // ── localStorage helpers ──────────────────────────────────
+  function getVerdicts() {
+    try { return JSON.parse(localStorage.getItem(LS_KEY) || '{}'); } catch { return {}; }
+  }
+  function saveVerdict(id) {
+    const v = getVerdicts();
+    v[id] = true;
+    localStorage.setItem(LS_KEY, JSON.stringify(v));
+  }
+  function clearVerdicts() {
+    localStorage.removeItem(LS_KEY);
+  }
+  function candidateId(c) {
+    return `${c.atlas_id}__${c.page}__${c.candidate_x_pct}__${c.candidate_y_pct}`;
+  }
+
+  // ── screen switching ──────────────────────────────────────
+  function showScreen(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
+  // ── populate login ────────────────────────────────────────
+  function initLogin() {
+    const sel = document.getElementById('reviewer-select');
+    sel.innerHTML = '';
+    (CONFIG.reviewers || []).forEach(name => {
+      const opt = document.createElement('option');
+      opt.value = name;
+      opt.textContent = name;
+      sel.appendChild(opt);
+    });
+
+    const done = Object.keys(getVerdicts()).length;
+    const remaining = manifest.length - done;
+    document.getElementById('login-meta').textContent =
+      `${manifest.length} candidates total · ${remaining} remaining`;
+
+    document.getElementById('btn-start').onclick = () => {
+      reviewer = sel.value;
+      startReview();
+    };
+  }
+
+  // ── build queue of unreviewed candidates ──────────────────
+  function buildQueue() {
+    const done = getVerdicts();
+    queue = manifest
+      .map((c, i) => ({ c, i }))
+      .filter(({ c }) => !done[candidateId(c)])
+      .map(({ i }) => i);
+    queuePos = 0;
+  }
+
+  // ── start review ──────────────────────────────────────────
+  function startReview() {
+    buildQueue();
+    if (queue.length === 0) { showScreen('screen-done'); updateDoneMsg(); return; }
+    showScreen('screen-review');
+    initViewer();
+    loadCurrent();
+  }
+
+  // ── OSD init ──────────────────────────────────────────────
+  function initViewer() {
+    if (viewer) { viewer.destroy(); viewer = null; }
+
+    viewer = OpenSeadragon({
+      id: 'osd-viewer',
+      showNavigationControl: false,
+      gestureSettingsMouse: { clickToZoom: false, dblClickToZoom: false },
+      animationTime: 0.25,
+      minZoomLevel: 0.1,
+      maxZoomLevel: 20,
+      visibilityRatio: 0.3,
+      constrainDuringPan: false,
+      blendTime: 0.1,
+    });
+
+    overlayCanvas = document.getElementById('overlay-canvas');
+    viewer.addHandler('update-viewport', drawOverlay);
+    viewer.addHandler('resize', () => { syncCanvasSize(); drawOverlay(); });
+    syncCanvasSize();
+  }
+
+  function syncCanvasSize() {
+    if (!viewer) return;
+    const c = viewer.container;
+    overlayCanvas.width  = c.clientWidth;
+    overlayCanvas.height = c.clientHeight;
+  }
+
+  // ── draw red circle on canvas ─────────────────────────────
+  function drawOverlay() {
+    if (!overlayCanvas || !currentVpPoint || !viewer) return;
+    syncCanvasSize();
+    const ctx = overlayCanvas.getContext('2d');
+    ctx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
+
+    const pixel = viewer.viewport.viewportToViewerElementCoordinates(currentVpPoint);
+
+    // outer glow
+    ctx.beginPath();
+    ctx.arc(pixel.x, pixel.y, 34, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(192, 57, 43, 0.3)';
+    ctx.lineWidth = 8;
+    ctx.stroke();
+
+    // circle
+    ctx.beginPath();
+    ctx.arc(pixel.x, pixel.y, 26, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(192, 57, 43, 0.95)';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    // crosshair lines (outside circle)
+    ctx.strokeStyle = 'rgba(192, 57, 43, 0.6)';
+    ctx.lineWidth = 1.5;
+    const r = 30, ext = 16;
+    [[pixel.x - r - ext, pixel.y, pixel.x - r, pixel.y],
+     [pixel.x + r, pixel.y, pixel.x + r + ext, pixel.y],
+     [pixel.x, pixel.y - r - ext, pixel.x, pixel.y - r],
+     [pixel.x, pixel.y + r, pixel.x, pixel.y + r + ext]].forEach(([x1,y1,x2,y2]) => {
+      ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+    });
+  }
+
+  // ── load current candidate ────────────────────────────────
+  function loadCurrent() {
+    if (queuePos >= queue.length) { showScreen('screen-done'); updateDoneMsg(); return; }
+    const candidate = manifest[queue[queuePos]];
+    updateInfoStrip(candidate);
+    updateProgress();
+    currentVpPoint = null;
+    verdictInFlight = false;
+
+    const noImg = document.getElementById('no-image-msg');
+    noImg.classList.remove('show');
+    document.getElementById('osd-viewer').style.opacity = '1';
+
+    const url = candidate.loc_clean_url || candidate.annotated_url || '';
+
+    if (!url) {
+      document.getElementById('no-image-source').textContent = candidate.source_file || '';
+      noImg.classList.add('show');
+      if (viewer) viewer.close();
+      return;
+    }
+
+    viewer.open({ type: 'image', url });
+
+    viewer.addOnceHandler('open', function () {
+      const ti = viewer.world.getItemAt(0);
+      if (!ti) return;
+      const size = ti.getContentSize();
+      const pixX = candidate.candidate_x_pct * size.x;
+      const pixY = candidate.candidate_y_pct * size.y;
+      currentVpPoint = ti.imageToViewportCoordinates(pixX, pixY);
+
+      // zoom to a ~15% wide window around the candidate
+      const bounds = ti.getBounds();
+      const hw = bounds.width * 0.08;           // half-width of view window (world units)
+      const hh = bounds.height * 0.08;
+      viewer.viewport.fitBoundsWithConstraints(
+        new OpenSeadragon.Rect(
+          currentVpPoint.x - hw, currentVpPoint.y - hh, hw * 2, hh * 2
+        ),
+        true   // immediately, no animation on first load
+      );
+      drawOverlay();
+    });
+  }
+
+  // ── info strip ────────────────────────────────────────────
+  function updateInfoStrip(c) {
+    const parts = [c.city, c.state, c.year].filter(Boolean);
+    const loc   = parts.join(' · ') || c.atlas_id;
+    const band  = (c.sample_band || '').replace('_', ' ');
+    const conf  = c.confidence != null ? (c.confidence * 100).toFixed(0) + '%' : '—';
+    const isNew = c.sweep_status === 'CANDIDATE_NEW_SHEET';
+
+    document.getElementById('info-strip').innerHTML = `
+      <span class="info-pill"><span>${loc}</span></span>
+      <span class="info-pill">Sheet <span>${c.sheet_label || c.page}</span></span>
+      <span class="info-pill">Confidence <span>${conf}</span></span>
+      <span class="info-pill">Band <span>${band}</span></span>
+      <span class="badge ${isNew ? 'badge-new' : 'badge-prev'}">${isNew ? 'new sheet' : 'reviewed sheet'}</span>
+    `;
+  }
+
+  // ── progress ──────────────────────────────────────────────
+  function updateProgress() {
+    const done   = queuePos;
+    const total  = queue.length;
+    const allDone = Object.keys(getVerdicts()).length;
+    document.getElementById('progress-label').textContent =
+      `${allDone} / ${manifest.length}`;
+    document.getElementById('progress-bar').style.width =
+      total ? ((done / total) * 100) + '%' : '0%';
+  }
+
+  // ── verdict ───────────────────────────────────────────────
+  function recordVerdict(verdict) {
+    if (verdictInFlight) return;
+    verdictInFlight = true;
+
+    const candidate = manifest[queue[queuePos]];
+    flash(verdict);
+    saveVerdict(candidateId(candidate));
+    sendRow(candidate, verdict);   // fire-and-forget
+
+    queuePos++;
+    setTimeout(loadCurrent, 180);
+  }
+
+  function flash(verdict) {
+    const el = document.getElementById('flash');
+    el.className = 'flash go ' + verdict;
+    setTimeout(() => el.classList.remove('go'), 80);
+    setTimeout(() => { el.className = 'flash'; }, 320);
+  }
+
+  // ── Google Sheets POST ────────────────────────────────────
+  function sendRow(c, verdict) {
+    const row = {
+      timestamp:       new Date().toISOString(),
+      reviewer:        reviewer,
+      atlas_id:        c.atlas_id,
+      page:            c.page,
+      state:           c.state,
+      city:            c.city || '',
+      year:            c.year || '',
+      sheet_label:     c.sheet_label,
+      candidate_x_pct: c.candidate_x_pct,
+      candidate_y_pct: c.candidate_y_pct,
+      confidence:      c.confidence,
+      sample_band:     c.sample_band,
+      sweep_status:    c.sweep_status,
+      verdict:         verdict,
+    };
+
+    if (!CONFIG.googleSheetWebAppUrl) return;
+
+    fetch(CONFIG.googleSheetWebAppUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(row),
+    }).catch(() => {});
+  }
+
+  // ── done screen ───────────────────────────────────────────
+  function updateDoneMsg() {
+    const n = Object.keys(getVerdicts()).length;
+    document.getElementById('done-msg').textContent =
+      `${n} of ${manifest.length} candidates reviewed. Thank you!`;
+  }
+
+  // ── reset ─────────────────────────────────────────────────
+  function doReset() {
+    if (!confirm('Clear all saved progress and start over?')) return;
+    clearVerdicts();
+    if (viewer) { viewer.destroy(); viewer = null; }
+    showScreen('screen-login');
+    initLogin();
+  }
+
+  // ── keyboard shortcuts ────────────────────────────────────
+  document.addEventListener('keydown', e => {
+    if (document.getElementById('screen-review').classList.contains('active')) {
+      const key = e.key.toLowerCase();
+      if (key === 'y') recordVerdict('yes');
+      else if (key === 'n') recordVerdict('no');
+      else if (key === 'u') recordVerdict('unsure');
+    }
+  });
+
+  // ── button wiring ─────────────────────────────────────────
+  document.getElementById('btn-yes').onclick    = () => recordVerdict('yes');
+  document.getElementById('btn-no').onclick     = () => recordVerdict('no');
+  document.getElementById('btn-unsure').onclick = () => recordVerdict('unsure');
+  document.getElementById('btn-reset').onclick  = doReset;
+  document.getElementById('btn-restart').onclick = () => { clearVerdicts(); showScreen('screen-login'); initLogin(); };
+
+  // ── load manifest and boot ────────────────────────────────
+  fetch('candidates_manifest.json')
+    .then(r => r.json())
+    .then(data => {
+      manifest = data;
+      initLogin();
+      showScreen('screen-login');
+    })
+    .catch(() => {
+      document.getElementById('login-meta').textContent =
+        'Error loading candidates_manifest.json';
+    });
+
+}());
+</script>
+</body>
+</html>
