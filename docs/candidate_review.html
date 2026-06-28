@@ -652,9 +652,6 @@ body {
     viewer.open(url.endsWith('info.json') ? url : { type: 'image', url });
 
     viewer.addOnceHandler('open', function () {
-      isLoading = false;
-      setVerdictEnabled(true);
-
       const ti = viewer.world.getItemAt(0);
       if (!ti) return;
       const size = ti.getContentSize();
@@ -673,6 +670,16 @@ body {
         true
       );
       drawOverlay();
+
+      // Enable buttons once the first tile is actually painted (not just after
+      // info.json loads), so the reviewer never sees a black screen with live buttons.
+      // Fallback after 4s in case a tile fails to load.
+      const fallback = setTimeout(() => { isLoading = false; setVerdictEnabled(true); }, 4000);
+      viewer.addOnceHandler('tile-drawn', function () {
+        clearTimeout(fallback);
+        isLoading = false;
+        setVerdictEnabled(true);
+      });
     });
   }
 
