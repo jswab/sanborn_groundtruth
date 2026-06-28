@@ -287,6 +287,8 @@ body {
   opacity: .6;
 }
 
+.verdict-bar.loading .btn-verdict { opacity: .4; pointer-events: none; cursor: default; }
+
 .btn-yes    { background: #d4edda; color: #145a2b; border-color: #a3d4b0; }
 .btn-yes:hover    { background: #b8ddc2; }
 .btn-no     { background: #fde8e8; color: #7a1a1a; border-color: #f0b8b8; }
@@ -425,6 +427,8 @@ body {
   let overlayCanvas = null;
   let currentVpPoint = null;
   let verdictInFlight = false;
+  let isLoading = false;
+  const itemCache = {};   // atlas_id → LOC API JSON (avoids duplicate fetches per atlas)
 
   // ── localStorage helpers ──────────────────────────────────
   function getVerdicts() {
@@ -559,8 +563,49 @@ body {
     });
   }
 
+  // ── LOC API URL lookup ────────────────────────────────────
+  async function resolveImageUrl(candidate) {
+    if (candidate.loc_clean_url) return candidate.loc_clean_url;
+    if (candidate.annotated_url) return candidate.annotated_url;
+
+    const pg = parseInt(candidate.page);
+    if (!candidate.atlas_id || isNaN(pg)) return null;
+
+    // Fetch item metadata once per atlas_id
+    if (!(candidate.atlas_id in itemCache)) {
+      try {
+        const ctrl = new AbortController();
+        const tid = setTimeout(() => ctrl.abort(), 7000);
+        const r = await fetch(
+          `https://www.loc.gov/item/${candidate.atlas_id}/?fo=json`,
+          { signal: ctrl.signal }
+        );
+        clearTimeout(tid);
+        itemCache[candidate.atlas_id] = r.ok ? await r.json() : null;
+      } catch { itemCache[candidate.atlas_id] = null; }
+    }
+
+    const data = itemCache[candidate.atlas_id];
+    if (!data) return null;
+
+    const files = (data.resources || data.item?.resources || [])[0]?.files || [];
+    const pageFiles = files[pg - 1];
+    if (pageFiles) {
+      for (const f of pageFiles) {
+        if (f.url && f.url.includes('tile.loc.gov')) {
+          return f.url + '/full/pct:25/0/default.jpg';
+        }
+      }
+    }
+    return null;
+  }
+
+  function setVerdictEnabled(on) {
+    document.querySelector('.verdict-bar').classList.toggle('loading', !on);
+  }
+
   // ── load current candidate ────────────────────────────────
-  function loadCurrent() {
+  async function loadCurrent() {
     if (queuePos >= queue.length) { showScreen('screen-done'); updateDoneMsg(); return; }
     const candidate = manifest[queue[queuePos]];
     updateInfoStrip(candidate);
@@ -572,7 +617,20 @@ body {
     noImg.classList.remove('show');
     document.getElementById('osd-viewer').style.opacity = '1';
 
-    const url = candidate.loc_clean_url || candidate.annotated_url || '';
+    // Try cached fields first; if missing, look up from LOC API
+    const hasQuickUrl = !!(candidate.loc_clean_url || candidate.annotated_url);
+    if (!hasQuickUrl) {
+      isLoading = true;
+      setVerdictEnabled(false);
+      document.getElementById('no-image-source').textContent = 'Looking up map on LOC…';
+      noImg.classList.add('show');
+    }
+
+    const url = await resolveImageUrl(candidate);
+
+    isLoading = false;
+    setVerdictEnabled(true);
+    noImg.classList.remove('show');
 
     if (!url) {
       document.getElementById('no-image-source').textContent = candidate.source_file || '';
@@ -635,7 +693,7 @@ body {
 
   // ── verdict ───────────────────────────────────────────────
   function recordVerdict(verdict) {
-    if (verdictInFlight) return;
+    if (verdictInFlight || isLoading) return;
     verdictInFlight = true;
 
     const candidate = manifest[queue[queuePos]];
