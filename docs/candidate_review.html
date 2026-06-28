@@ -564,9 +564,14 @@ body {
   }
 
   // ── LOC API URL lookup ────────────────────────────────────
+  function toIiifUrl(base) {
+    // Strip any IIIF request suffix to get the bare identifier, then add info.json
+    return base.replace(/\/(full|info\.json).*$/, '') + '/info.json';
+  }
+
   async function resolveImageUrl(candidate) {
-    if (candidate.loc_clean_url) return candidate.loc_clean_url;
-    if (candidate.annotated_url) return candidate.annotated_url;
+    if (candidate.loc_clean_url) return toIiifUrl(candidate.loc_clean_url);
+    if (candidate.annotated_url)  return candidate.annotated_url; // GitHub raw — not IIIF
 
     const pg = parseInt(candidate.page);
     if (!candidate.atlas_id || isNaN(pg)) return null;
@@ -593,7 +598,7 @@ body {
     if (pageFiles) {
       for (const f of pageFiles) {
         if (f.url && f.url.includes('tile.loc.gov')) {
-          return f.url + '/full/pct:25/0/default.jpg';
+          return toIiifUrl(f.url);
         }
       }
     }
@@ -639,7 +644,8 @@ body {
       return;
     }
 
-    viewer.open({ type: 'image', url });
+    // info.json → IIIF tiling (sharp at any zoom); anything else → flat image
+    viewer.open(url.endsWith('info.json') ? url : { type: 'image', url });
 
     viewer.addOnceHandler('open', function () {
       const ti = viewer.world.getItemAt(0);
