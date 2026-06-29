@@ -178,6 +178,23 @@ body {
 }
 .btn-reset:hover { border-color: #fff; color: #fff; }
 
+.btn-reload {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  z-index: 10;
+  background: rgba(0,0,0,.45);
+  border: 1px solid rgba(255,255,255,.3);
+  color: rgba(255,255,255,.8);
+  border-radius: 3px;
+  padding: .2rem .55rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.btn-reload:hover { background: rgba(0,0,0,.7); color: #fff; }
+
 /* info strip */
 .info-strip {
   background: var(--paper);
@@ -379,6 +396,7 @@ body {
   <div class="viewer-area">
     <div id="osd-viewer"></div>
     <canvas class="overlay-canvas" id="overlay-canvas"></canvas>
+    <button class="btn-reload" id="btn-reload" title="Reload map (R)">↺ Reload</button>
     <div class="no-image-msg" id="no-image-msg">
       <div>No image available for this candidate.</div>
       <div class="no-image-source" id="no-image-source"></div>
@@ -787,6 +805,7 @@ body {
       if (key === 'y') recordVerdict('yes');
       else if (key === 'n') recordVerdict('no');
       else if (key === 'u') recordVerdict('unsure');
+      else if (key === 'r') loadCurrent();
     }
   });
 
@@ -795,6 +814,7 @@ body {
   document.getElementById('btn-no').onclick     = () => recordVerdict('no');
   document.getElementById('btn-unsure').onclick = () => recordVerdict('unsure');
   document.getElementById('btn-reset').onclick  = doReset;
+  document.getElementById('btn-reload').onclick = () => loadCurrent();
   document.getElementById('btn-restart').onclick = () => { clearVerdicts(); showScreen('screen-login'); initLogin(); };
 
   // ── load manifest and boot ────────────────────────────────
