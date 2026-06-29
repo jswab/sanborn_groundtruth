@@ -321,6 +321,8 @@ body {
 .btn-no:hover     { background: #f4cccc; }
 .btn-unsure { background: #fff3cd; color: #7a5700; border-color: #f0d98a; }
 .btn-unsure:hover { background: #ede4a0; }
+.btn-skip   { background: transparent; color: var(--muted); border-color: var(--border); }
+.btn-skip:hover   { background: var(--paper); }
 
 /* flash feedback */
 .flash {
@@ -428,6 +430,10 @@ body {
     <button class="btn-verdict btn-unsure" id="btn-unsure">
       ? Unsure
       <span class="key-hint">U</span>
+    </button>
+    <button class="btn-verdict btn-skip" id="btn-skip">
+      ↷ Skip
+      <span class="key-hint">S</span>
     </button>
   </div>
 </div>
@@ -619,7 +625,23 @@ body {
     }
 
     loading.classList.add('show');
-    viewer.open({ type: 'image', url });
+    let triedBackup = false;
+
+    function openUrl(imageUrl) {
+      viewer.open({ type: 'image', url: imageUrl });
+    }
+
+    viewer.addOnceHandler('open-failed', function () {
+      const backup = candidate.backup_url || '';
+      if (!triedBackup && backup && backup !== url) {
+        triedBackup = true;
+        openUrl(backup);
+      } else {
+        loading.classList.remove('show');
+        document.getElementById('no-image-source').textContent = candidate.source_file || '';
+        noImg.classList.add('show');
+      }
+    });
 
     viewer.addOnceHandler('open', function () {
       loading.classList.remove('show');
@@ -630,7 +652,6 @@ body {
       const pixY = candidate.candidate_y_pct * size.y;
       currentVpPoint = ti.imageToViewportCoordinates(pixX, pixY);
 
-      // zoom to a ~15% wide window around the candidate
       const bounds = ti.getBounds();
       const hw = bounds.width * 0.08;
       const hh = bounds.height * 0.08;
@@ -643,6 +664,18 @@ body {
       drawOverlay();
       prefetchNext();
     });
+
+    openUrl(url);
+  }
+
+  // ── skip (move to end of queue) ───────────────────────────
+  function skipCurrent() {
+    if (verdictInFlight) return;
+    const idx = queue[queuePos];
+    queue.splice(queuePos, 1);
+    queue.push(idx);
+    if (viewer) viewer.close();
+    loadCurrent();
   }
 
   // ── info strip ────────────────────────────────────────────
@@ -746,6 +779,7 @@ body {
       if (key === 'y') recordVerdict('yes');
       else if (key === 'n') recordVerdict('no');
       else if (key === 'u') recordVerdict('unsure');
+      else if (key === 's') skipCurrent();
     }
   });
 
@@ -753,6 +787,7 @@ body {
   document.getElementById('btn-yes').onclick    = () => recordVerdict('yes');
   document.getElementById('btn-no').onclick     = () => recordVerdict('no');
   document.getElementById('btn-unsure').onclick = () => recordVerdict('unsure');
+  document.getElementById('btn-skip').onclick   = () => skipCurrent();
   document.getElementById('btn-reset').onclick  = doReset;
   document.getElementById('btn-restart').onclick = () => { clearVerdicts(); showScreen('screen-login'); initLogin(); };
 
