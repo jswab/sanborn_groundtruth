@@ -378,7 +378,7 @@ body {
   <div class="login-card">
     <div>
       <h1>FB Candidate Review</h1>
-      <div class="subtitle">Sanborn Fire Insurance Maps</div>
+      <div class="subtitle">Sanborn Fire Insurance Maps · <span id="version-label"></span></div>
     </div>
     <div>
       <label for="reviewer-select">Reviewer</label>
@@ -748,13 +748,13 @@ body {
 
     if (!CONFIG.googleSheetWebAppUrl) return;
 
-    // no-cors blocks Content-Type: application/json; omit it so the browser
-    // sends text/plain, which is allowed and still received by Apps Script
+    // Use default cors mode (no no-cors) — GAS returns Access-Control-Allow-Origin: *
+    // Omit Content-Type so browser sends text/plain, avoiding a CORS preflight.
+    // GAS reads the body via e.postData.contents.
     fetch(CONFIG.googleSheetWebAppUrl, {
       method: 'POST',
-      mode: 'no-cors',
       body: JSON.stringify(row),
-    }).catch(() => {});
+    }).catch(e => console.error('Sheet POST failed:', e));
   }
 
   // ── done screen ───────────────────────────────────────────
@@ -793,6 +793,9 @@ body {
   document.getElementById('btn-restart').onclick = () => { clearVerdicts(); showScreen('screen-login'); initLogin(); };
 
   // ── load manifest and boot ────────────────────────────────
+  document.getElementById('version-label').textContent =
+    'v' + (CONFIG.version || '?');
+
   fetch('candidates_manifest.json')
     .then(r => r.json())
     .then(data => {
