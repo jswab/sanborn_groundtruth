@@ -748,12 +748,13 @@ body {
 
     if (!CONFIG.googleSheetWebAppUrl) return;
 
-    // Use default cors mode (no no-cors) — GAS returns Access-Control-Allow-Origin: *
-    // Omit Content-Type so browser sends text/plain, avoiding a CORS preflight.
-    // GAS reads the body via e.postData.contents.
+    // GAS doPost reads e.parameter.* which requires form-encoded body.
+    const params = new URLSearchParams();
+    Object.entries(row).forEach(([k, v]) => params.set(k, v ?? ''));
     fetch(CONFIG.googleSheetWebAppUrl, {
       method: 'POST',
-      body: JSON.stringify(row),
+      mode: 'no-cors',
+      body: params,
     }).catch(e => console.error('Sheet POST failed:', e));
   }
 
