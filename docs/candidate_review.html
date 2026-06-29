@@ -178,66 +178,6 @@ body {
 }
 .btn-reset:hover { border-color: #fff; color: #fff; }
 
-.btn-reload {
-  position: absolute;
-  top: .5rem;
-  left: .5rem;
-  z-index: 10;
-  background: rgba(0,0,0,.45);
-  border: 1px solid rgba(255,255,255,.3);
-  color: rgba(255,255,255,.8);
-  border-radius: 3px;
-  padding: .2rem .55rem;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.7rem;
-  cursor: pointer;
-  transition: background .15s, color .15s;
-}
-.btn-reload:hover { background: rgba(0,0,0,.7); color: #fff; }
-
-.viewer-loading {
-  display: none;
-  position: absolute;
-  inset: 0;
-  z-index: 8;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: .6rem;
-  background: rgba(0,0,0,.55);
-  color: rgba(255,255,255,.85);
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: .8rem;
-  pointer-events: none;
-}
-.viewer-loading.show { display: flex; }
-.viewer-loading-spinner {
-  width: 32px; height: 32px;
-  border: 3px solid rgba(255,255,255,.2);
-  border-top-color: rgba(255,255,255,.85);
-  border-radius: 50%;
-  animation: spin .8s linear infinite;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-
-.viewer-error {
-  display: none;
-  position: absolute;
-  bottom: 3.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9;
-  background: rgba(180,30,30,.85);
-  color: #fff;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: .75rem;
-  padding: .35rem .75rem;
-  border-radius: 4px;
-  white-space: nowrap;
-  pointer-events: none;
-}
-.viewer-error.show { display: block; }
-
 /* info strip */
 .info-strip {
   background: var(--paper);
@@ -313,6 +253,34 @@ body {
   max-width: 480px;
 }
 
+/* loading spinner */
+.loading-indicator {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: .75rem;
+  pointer-events: none;
+  z-index: 10;
+}
+.loading-indicator.show { display: flex; }
+.spinner {
+  width: 40px; height: 40px;
+  border: 3px solid rgba(255,255,255,.15);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,.45);
+  letter-spacing: .06em;
+}
+
 /* verdict bar */
 .verdict-bar {
   background: var(--panel);
@@ -346,8 +314,6 @@ body {
   font-size: 0.62rem;
   opacity: .6;
 }
-
-.verdict-bar.loading .btn-verdict { opacity: .4; pointer-events: none; cursor: default; }
 
 .btn-yes    { background: #d4edda; color: #145a2b; border-color: #a3d4b0; }
 .btn-yes:hover    { background: #b8ddc2; }
@@ -439,13 +405,9 @@ body {
   <div class="viewer-area">
     <div id="osd-viewer"></div>
     <canvas class="overlay-canvas" id="overlay-canvas"></canvas>
-    <button class="btn-reload" id="btn-reload" title="Reload map (R)">↺ Reload</button>
-    <div class="viewer-loading" id="viewer-loading">
-      <div class="viewer-loading-spinner"></div>
-      <div class="viewer-loading-text">Loading map…</div>
-    </div>
-    <div class="viewer-error" id="viewer-error">
-      Map timed out — press <b>R</b> to retry
+    <div class="loading-indicator" id="loading-indicator">
+      <div class="spinner"></div>
+      <div class="loading-label">Loading map…</div>
     </div>
     <div class="no-image-msg" id="no-image-msg">
       <div>No image available for this candidate.</div>
@@ -495,8 +457,6 @@ body {
   let overlayCanvas = null;
   let currentVpPoint = null;
   let verdictInFlight = false;
-  let isLoading = false;
-  const itemCache = {};   // atlas_id → LOC API JSON (avoids duplicate fetches per atlas)
 
   // ── localStorage helpers ──────────────────────────────────
   function getVerdicts() {
@@ -533,9 +493,8 @@ body {
 
     const done = Object.keys(getVerdicts()).length;
     const remaining = manifest.length - done;
-    const ver = CONFIG.version ? ` · v${CONFIG.version}` : '';
     document.getElementById('login-meta').textContent =
-      `${manifest.length} candidates total · ${remaining} remaining${ver}`;
+      `${manifest.length} candidates total · ${remaining} remaining`;
 
     document.getElementById('btn-start').onclick = () => {
       reviewer = sel.value;
@@ -549,11 +508,6 @@ body {
     queue = manifest
       .map((c, i) => ({ c, i }))
       .filter(({ c }) => !done[candidateId(c)])
-      .sort((a, b) => {
-        const aImg = !!(a.c.loc_clean_url || a.c.annotated_url);
-        const bImg = !!(b.c.loc_clean_url || b.c.annotated_url);
-        return bImg - aImg; // candidates with images first
-      })
       .map(({ i }) => i);
     queuePos = 0;
   }
@@ -631,56 +585,17 @@ body {
     });
   }
 
-  // ── LOC API URL lookup ────────────────────────────────────
-  function toIiifUrl(base) {
-    // Strip any IIIF request suffix to get the bare identifier, then add info.json
-    return base.replace(/\/(full|info\.json).*$/, '') + '/info.json';
-  }
-
-  async function resolveImageUrl(candidate) {
-    if (candidate.loc_clean_url) return toIiifUrl(candidate.loc_clean_url);
-    if (candidate.annotated_url)  return candidate.annotated_url; // GitHub raw — not IIIF
-
-    const pg = parseInt(candidate.page);
-    if (!candidate.atlas_id || isNaN(pg)) return null;
-
-    // Fetch item metadata once per atlas_id
-    if (!(candidate.atlas_id in itemCache)) {
-      try {
-        const ctrl = new AbortController();
-        const tid = setTimeout(() => ctrl.abort(), 7000);
-        const r = await fetch(
-          `https://www.loc.gov/item/${candidate.atlas_id}/?fo=json`,
-          { signal: ctrl.signal }
-        );
-        clearTimeout(tid);
-        itemCache[candidate.atlas_id] = r.ok ? await r.json() : null;
-      } catch { itemCache[candidate.atlas_id] = null; }
-    }
-
-    const data = itemCache[candidate.atlas_id];
-    if (!data) return null;
-
-    const files = (data.resources || data.item?.resources || [])[0]?.files || [];
-    const pageFiles = files[pg - 1];
-    if (pageFiles) {
-      for (const f of pageFiles) {
-        if (f.url && f.url.includes('tile.loc.gov')) {
-          return toIiifUrl(f.url);
-        }
-      }
-    }
-    return null;
-  }
-
-  function setVerdictEnabled(on) {
-    document.querySelector('.verdict-bar').classList.toggle('loading', !on);
-    document.getElementById('viewer-loading').classList.toggle('show', !on);
-    if (on) document.getElementById('viewer-error').classList.remove('show');
+  // ── prefetch next image into browser cache ────────────────
+  function prefetchNext() {
+    const nextPos = queuePos + 1;
+    if (nextPos >= queue.length) return;
+    const next = manifest[queue[nextPos]];
+    const url = next.loc_clean_url || next.annotated_url || '';
+    if (url) { new Image().src = url; }
   }
 
   // ── load current candidate ────────────────────────────────
-  async function loadCurrent() {
+  function loadCurrent() {
     if (queuePos >= queue.length) { showScreen('screen-done'); updateDoneMsg(); return; }
     const candidate = manifest[queue[queuePos]];
     updateInfoStrip(candidate);
@@ -689,40 +604,25 @@ body {
     verdictInFlight = false;
 
     const noImg = document.getElementById('no-image-msg');
+    const loading = document.getElementById('loading-indicator');
     noImg.classList.remove('show');
-    document.getElementById('viewer-error').classList.remove('show');
     document.getElementById('osd-viewer').style.opacity = '1';
 
-    // Try cached fields first; if missing, look up from LOC API
-    const hasQuickUrl = !!(candidate.loc_clean_url || candidate.annotated_url);
-    if (!hasQuickUrl) {
-      isLoading = true;
-      setVerdictEnabled(false);
-      document.getElementById('no-image-source').textContent = 'Looking up map on LOC…';
-      noImg.classList.add('show');
-    }
-
-    const url = await resolveImageUrl(candidate);
-
-    isLoading = false;
-    setVerdictEnabled(true);
-    noImg.classList.remove('show');
+    const url = candidate.loc_clean_url || candidate.annotated_url || '';
 
     if (!url) {
       document.getElementById('no-image-source').textContent = candidate.source_file || '';
       noImg.classList.add('show');
+      loading.classList.remove('show');
       if (viewer) viewer.close();
       return;
     }
 
-    // Keep buttons disabled until OSD has opened and positioned the map
-    isLoading = true;
-    setVerdictEnabled(false);
-
-    // info.json → IIIF tiling (sharp at any zoom); anything else → flat image
-    viewer.open(url.endsWith('info.json') ? url : { type: 'image', url });
+    loading.classList.add('show');
+    viewer.open({ type: 'image', url });
 
     viewer.addOnceHandler('open', function () {
+      loading.classList.remove('show');
       const ti = viewer.world.getItemAt(0);
       if (!ti) return;
       const size = ti.getContentSize();
@@ -730,33 +630,18 @@ body {
       const pixY = candidate.candidate_y_pct * size.y;
       currentVpPoint = ti.imageToViewportCoordinates(pixX, pixY);
 
-      // zoom to a ~15% wide window around the candidate, clamped to image edges
+      // zoom to a ~15% wide window around the candidate
       const bounds = ti.getBounds();
       const hw = bounds.width * 0.08;
       const hh = bounds.height * 0.08;
-      const rx = Math.max(bounds.x, Math.min(bounds.x + bounds.width  - hw * 2, currentVpPoint.x - hw));
-      const ry = Math.max(bounds.y, Math.min(bounds.y + bounds.height - hh * 2, currentVpPoint.y - hh));
       viewer.viewport.fitBoundsWithConstraints(
-        new OpenSeadragon.Rect(rx, ry, hw * 2, hh * 2),
+        new OpenSeadragon.Rect(
+          currentVpPoint.x - hw, currentVpPoint.y - hh, hw * 2, hh * 2
+        ),
         true
       );
       drawOverlay();
-
-      // Enable buttons once the first tile is actually painted (not just after
-      // info.json loads), so the reviewer never sees a black screen with live buttons.
-      // Fallback after 12s shows an error banner so the user knows to press R.
-      let tileDrawn = false;
-      const fallback = setTimeout(() => {
-        isLoading = false;
-        setVerdictEnabled(true);
-        if (!tileDrawn) document.getElementById('viewer-error').classList.add('show');
-      }, 12000);
-      viewer.addOnceHandler('tile-drawn', function () {
-        tileDrawn = true;
-        clearTimeout(fallback);
-        isLoading = false;
-        setVerdictEnabled(true);
-      });
+      prefetchNext();
     });
   }
 
@@ -790,7 +675,7 @@ body {
 
   // ── verdict ───────────────────────────────────────────────
   function recordVerdict(verdict) {
-    if (verdictInFlight || isLoading) return;
+    if (verdictInFlight) return;
     verdictInFlight = true;
 
     const candidate = manifest[queue[queuePos]];
@@ -830,14 +715,11 @@ body {
 
     if (!CONFIG.googleSheetWebAppUrl) return;
 
-    // FormData is a simple content-type that works with no-cors;
-    // JSON with Content-Type:application/json gets stripped by the browser.
-    const fd = new FormData();
-    Object.entries(row).forEach(([k, v]) => fd.append(k, String(v ?? '')));
     fetch(CONFIG.googleSheetWebAppUrl, {
       method: 'POST',
       mode: 'no-cors',
-      body: fd,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(row),
     }).catch(() => {});
   }
 
@@ -864,7 +746,6 @@ body {
       if (key === 'y') recordVerdict('yes');
       else if (key === 'n') recordVerdict('no');
       else if (key === 'u') recordVerdict('unsure');
-      else if (key === 'r') loadCurrent();
     }
   });
 
@@ -873,7 +754,6 @@ body {
   document.getElementById('btn-no').onclick     = () => recordVerdict('no');
   document.getElementById('btn-unsure').onclick = () => recordVerdict('unsure');
   document.getElementById('btn-reset').onclick  = doReset;
-  document.getElementById('btn-reload').onclick = () => loadCurrent();
   document.getElementById('btn-restart').onclick = () => { clearVerdicts(); showScreen('screen-login'); initLogin(); };
 
   // ── load manifest and boot ────────────────────────────────
