@@ -468,9 +468,9 @@ body {
   function getVerdicts() {
     try { return JSON.parse(localStorage.getItem(LS_KEY) || '{}'); } catch { return {}; }
   }
-  function saveVerdict(id) {
+  function saveVerdict(id, verdict) {
     const v = getVerdicts();
-    v[id] = true;
+    v[id] = verdict;
     localStorage.setItem(LS_KEY, JSON.stringify(v));
   }
   function clearVerdicts() {
@@ -713,7 +713,7 @@ body {
 
     const candidate = manifest[queue[queuePos]];
     flash(verdict);
-    saveVerdict(candidateId(candidate));
+    saveVerdict(candidateId(candidate), verdict);
     sendRow(candidate, verdict);   // fire-and-forget
 
     queuePos++;
@@ -748,10 +748,11 @@ body {
 
     if (!CONFIG.googleSheetWebAppUrl) return;
 
+    // no-cors blocks Content-Type: application/json; omit it so the browser
+    // sends text/plain, which is allowed and still received by Apps Script
     fetch(CONFIG.googleSheetWebAppUrl, {
       method: 'POST',
       mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(row),
     }).catch(() => {});
   }
