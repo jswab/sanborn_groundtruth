@@ -463,6 +463,8 @@ body {
   let overlayCanvas = null;
   let currentVpPoint = null;
   let verdictInFlight = false;
+  let openHandler = null;
+  let failHandler = null;
 
   // ── localStorage helpers ──────────────────────────────────
   function getVerdicts() {
@@ -527,9 +529,17 @@ body {
     loadCurrent();
   }
 
+  // ── clean up viewer event handlers ───────────────────────
+  function clearViewerHandlers() {
+    if (openHandler) { viewer.removeHandler('open', openHandler); openHandler = null; }
+    if (failHandler) { viewer.removeHandler('open-failed', failHandler); failHandler = null; }
+  }
+
   // ── OSD init ──────────────────────────────────────────────
   function initViewer() {
     if (viewer) { viewer.destroy(); viewer = null; }
+    openHandler = null;
+    failHandler = null;
 
     viewer = OpenSeadragon({
       id: 'osd-viewer',
@@ -614,9 +624,16 @@ body {
     noImg.classList.remove('show');
     document.getElementById('osd-viewer').style.opacity = '1';
 
-    const url = candidate.loc_clean_url || candidate.annotated_url || '';
+    clearViewerHandlers();
 
-    if (!url) {
+    // Build fallback chain: try each non-empty URL in order
+    const urlChain = [
+      candidate.loc_clean_url,
+      candidate.annotated_url,
+      candidate.backup_url,
+    ].filter(u => u && u.trim());
+
+    if (urlChain.length === 0) {
       document.getElementById('no-image-source').textContent = candidate.source_file || '';
       noImg.classList.add('show');
       loading.classList.remove('show');
@@ -625,25 +642,24 @@ body {
     }
 
     loading.classList.add('show');
-    let triedBackup = false;
+    let urlIndex = 0;
 
-    function openUrl(imageUrl) {
-      viewer.open({ type: 'image', url: imageUrl });
-    }
-
-    viewer.addOnceHandler('open-failed', function () {
-      const backup = candidate.backup_url || '';
-      if (!triedBackup && backup && backup !== url) {
-        triedBackup = true;
-        openUrl(backup);
+    // Persistent handler: advances through the chain on each failure
+    failHandler = function () {
+      urlIndex++;
+      if (urlIndex < urlChain.length) {
+        viewer.open({ type: 'image', url: urlChain[urlIndex] });
       } else {
+        viewer.removeHandler('open-failed', failHandler); failHandler = null;
         loading.classList.remove('show');
         document.getElementById('no-image-source').textContent = candidate.source_file || '';
         noImg.classList.add('show');
       }
-    });
+    };
+    viewer.addHandler('open-failed', failHandler);
 
-    viewer.addOnceHandler('open', function () {
+    openHandler = function () {
+      clearViewerHandlers();
       loading.classList.remove('show');
       const ti = viewer.world.getItemAt(0);
       if (!ti) return;
@@ -663,9 +679,10 @@ body {
       );
       drawOverlay();
       prefetchNext();
-    });
+    };
+    viewer.addHandler('open', openHandler);
 
-    openUrl(url);
+    viewer.open({ type: 'image', url: urlChain[0] });
   }
 
   // ── skip (move to end of queue) ───────────────────────────
@@ -717,6 +734,7 @@ body {
     sendRow(candidate, verdict);   // fire-and-forget
 
     queuePos++;
+    updateProgress();
     setTimeout(loadCurrent, 180);
   }
 
