@@ -19,7 +19,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03242_003_2.jpg"
   },
   {
     "atlas_id": "sanborn08348_016",
@@ -41,7 +42,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_016_71.jpg"
   },
   {
     "atlas_id": "sanborn03200_005",
@@ -63,7 +65,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 15,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03200_005_50.jpg"
   },
   {
     "atlas_id": "sanborn08356_025",
@@ -85,7 +88,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_025_69.jpg"
   },
   {
     "atlas_id": "sanborn08348_003",
@@ -107,7 +111,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_003_41.jpg"
   },
   {
     "atlas_id": "sanborn08348_003",
@@ -129,7 +134,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 15,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_003_4.jpg"
   },
   {
     "atlas_id": "sanborn08348_020",
@@ -151,7 +157,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_020_2.jpg"
   },
   {
     "atlas_id": "sanborn08348_004",
@@ -173,7 +180,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_004_23.jpg"
   },
   {
     "atlas_id": "sanborn03204_004",
@@ -195,7 +203,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 11,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03204_004_40.jpg"
   },
   {
     "atlas_id": "sanborn03240_001",
@@ -217,7 +226,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03240_001_2.jpg"
   },
   {
     "atlas_id": "sanborn08348_021",
@@ -239,7 +249,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_021_41.jpg"
   },
   {
     "atlas_id": "sanborn08356_005",
@@ -261,7 +272,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 4,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_005_52.jpg"
   },
   {
     "atlas_id": "sanborn08356_012",
@@ -283,7 +295,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_012_39.jpg"
   },
   {
     "atlas_id": "sanborn08315_007",
@@ -305,7 +318,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08315_007_8.jpg"
   },
   {
     "atlas_id": "sanborn08356_005",
@@ -327,7 +341,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 4,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_005_52.jpg"
   },
   {
     "atlas_id": "sanborn03178_003",
@@ -349,7 +364,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03178_003_3.jpg"
   },
   {
     "atlas_id": "sanborn08348_002",
@@ -371,7 +387,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 4,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_002_19.jpg"
   },
   {
     "atlas_id": "sanborn08331_003",
@@ -393,7 +410,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08331_003_20.jpg"
   },
   {
     "atlas_id": "sanborn08348_010",
@@ -415,7 +433,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_010_94.jpg"
   },
   {
     "atlas_id": "sanborn03166_006",
@@ -437,7 +456,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 5,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03166_006_6.jpg"
   },
   {
     "atlas_id": "sanborn03166_002",
@@ -459,7 +479,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03166_002_5.jpg"
   },
   {
     "atlas_id": "sanborn08303_003",
@@ -481,7 +502,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08303_003_4.jpg"
   },
   {
     "atlas_id": "sanborn08348_004",
@@ -503,7 +525,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 7,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_004_9.jpg"
   },
   {
     "atlas_id": "sanborn08355_007",
@@ -525,7 +548,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08355_007_2.jpg"
   },
   {
     "atlas_id": "sanborn08390_002",
@@ -547,7 +571,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08390_002_1.jpg"
   },
   {
     "atlas_id": "sanborn08311_006",
@@ -569,7 +594,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08311_006_9.jpg"
   },
   {
     "atlas_id": "sanborn03222_008",
@@ -591,7 +617,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03222_008_54.jpg"
   },
   {
     "atlas_id": "sanborn03200_004",
@@ -613,7 +640,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03200_004_22.jpg"
   },
   {
     "atlas_id": "sanborn03204_004",
@@ -635,7 +663,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 11,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03204_004_40.jpg"
   },
   {
     "atlas_id": "sanborn08348_005",
@@ -657,7 +686,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_005_18.jpg"
   },
   {
     "atlas_id": "sanborn08356_025",
@@ -679,7 +709,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_025_40.jpg"
   },
   {
     "atlas_id": "sanborn08287_010",
@@ -701,7 +732,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08287_010_11.jpg"
   },
   {
     "atlas_id": "sanborn03122_003",
@@ -723,7 +755,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03122_003_13.jpg"
   },
   {
     "atlas_id": "sanborn03200_008",
@@ -745,7 +778,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03200_008_28.jpg"
   },
   {
     "atlas_id": "sanborn03200_004",
@@ -767,7 +801,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03200_004_22.jpg"
   },
   {
     "atlas_id": "sanborn08356_005",
@@ -789,7 +824,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 6,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_005_50.jpg"
   },
   {
     "atlas_id": "sanborn03204_004",
@@ -811,7 +847,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 23,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03204_004_39.jpg"
   },
   {
     "atlas_id": "sanborn08294_004",
@@ -833,7 +870,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08294_004_2.jpg"
   },
   {
     "atlas_id": "sanborn03225_004",
@@ -855,7 +893,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 7,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03225_004_3.jpg"
   },
   {
     "atlas_id": "sanborn08294_004",
@@ -877,7 +916,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08294_004_2.jpg"
   },
   {
     "atlas_id": "sanborn03144_004",
@@ -899,7 +939,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03144_004_3.jpg"
   },
   {
     "atlas_id": "sanborn08348_021",
@@ -921,7 +962,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_021_43.jpg"
   },
   {
     "atlas_id": "sanborn08356_005",
@@ -943,7 +985,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 4,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_005_52.jpg"
   },
   {
     "atlas_id": "sanborn08356_019",
@@ -965,7 +1008,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_019_1.jpg"
   },
   {
     "atlas_id": "sanborn08337_001",
@@ -987,7 +1031,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08337_001_1.jpg"
   },
   {
     "atlas_id": "sanborn08356_024",
@@ -1009,7 +1054,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_024_13.jpg"
   },
   {
     "atlas_id": "sanborn08331_003",
@@ -1031,7 +1077,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 3,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08331_003_42.jpg"
   },
   {
     "atlas_id": "sanborn08356_005",
@@ -1053,7 +1100,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 4,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_005_52.jpg"
   },
   {
     "atlas_id": "sanborn08313_003",
@@ -1075,7 +1123,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08313_003_2.jpg"
   },
   {
     "atlas_id": "sanborn08331_002",
@@ -1097,7 +1146,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08331_002_17.jpg"
   },
   {
     "atlas_id": "sanborn08356_005",
@@ -1119,7 +1169,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 13,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_005_40.jpg"
   },
   {
     "atlas_id": "sanborn03225_003",
@@ -1141,7 +1192,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03225_003_2.jpg"
   },
   {
     "atlas_id": "sanborn08356_005",
@@ -1163,7 +1215,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 4,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_005_52.jpg"
   },
   {
     "atlas_id": "sanborn03209_004",
@@ -1185,7 +1238,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 7,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03209_004_12.jpg"
   },
   {
     "atlas_id": "sanborn08348_005",
@@ -1207,7 +1261,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 16,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_005_16.jpg"
   },
   {
     "atlas_id": "sanborn08356_024",
@@ -1229,7 +1284,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_024_69.jpg"
   },
   {
     "atlas_id": "sanborn03253_002",
@@ -1251,7 +1307,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03253_002_2.jpg"
   },
   {
     "atlas_id": "sanborn03234_005",
@@ -1273,7 +1330,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03234_005_7.jpg"
   },
   {
     "atlas_id": "sanborn03169_005",
@@ -1295,7 +1353,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03169_005_10.jpg"
   },
   {
     "atlas_id": "sanborn08331_003",
@@ -1317,7 +1376,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 3,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08331_003_42.jpg"
   },
   {
     "atlas_id": "sanborn08377_002",
@@ -1339,7 +1399,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08377_002_2.jpg"
   },
   {
     "atlas_id": "sanborn03196_005",
@@ -1361,7 +1422,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03196_005_11.jpg"
   },
   {
     "atlas_id": "sanborn03200_004",
@@ -1383,7 +1445,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03200_004_10.jpg"
   },
   {
     "atlas_id": "sanborn03225_004",
@@ -1405,7 +1468,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03225_004_21.jpg"
   },
   {
     "atlas_id": "sanborn08356_005",
@@ -1427,7 +1491,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 4,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_005_52.jpg"
   },
   {
     "atlas_id": "sanborn03222_008",
@@ -1449,7 +1514,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03222_008_45.jpg"
   },
   {
     "atlas_id": "sanborn08296_007",
@@ -1471,7 +1537,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08296_007_8.jpg"
   },
   {
     "atlas_id": "sanborn08356_025",
@@ -1493,7 +1560,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_025_65.jpg"
   },
   {
     "atlas_id": "sanborn08331_003",
@@ -1515,7 +1583,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08331_003_14.jpg"
   },
   {
     "atlas_id": "sanborn08340_005",
@@ -1537,7 +1606,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08340_005_3.jpg"
   },
   {
     "atlas_id": "sanborn08291_003",
@@ -1559,7 +1629,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 2,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08291_003_9.jpg"
   },
   {
     "atlas_id": "sanborn03236_003",
@@ -1581,7 +1652,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03236_003_1.jpg"
   },
   {
     "atlas_id": "sanborn08291_020",
@@ -1603,7 +1675,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08291_020_23.jpg"
   },
   {
     "atlas_id": "sanborn08331_003",
@@ -1625,7 +1698,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 1,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08331_003_41.jpg"
   },
   {
     "atlas_id": "sanborn08296_006",
@@ -1647,7 +1721,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08296_006_12.jpg"
   },
   {
     "atlas_id": "sanborn08348_005",
@@ -1669,7 +1744,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 16,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_005_16.jpg"
   },
   {
     "atlas_id": "sanborn03234_006",
@@ -1691,7 +1767,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03234_006_6.jpg"
   },
   {
     "atlas_id": "sanborn08346_010",
@@ -1713,7 +1790,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08346_010_13.jpg"
   },
   {
     "atlas_id": "sanborn03204_005",
@@ -1735,7 +1813,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 6,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03204_005_49.jpg"
   },
   {
     "atlas_id": "sanborn03225_004",
@@ -1757,7 +1836,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03225_004_19.jpg"
   },
   {
     "atlas_id": "sanborn03244_006",
@@ -1779,7 +1859,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03244_006_4.jpg"
   },
   {
     "atlas_id": "sanborn03129_001",
@@ -1801,7 +1882,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03129_001_2.jpg"
   },
   {
     "atlas_id": "sanborn08322_005",
@@ -1823,7 +1905,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08322_005_2.jpg"
   },
   {
     "atlas_id": "sanborn08291_019",
@@ -1845,7 +1928,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08291_019_39.jpg"
   },
   {
     "atlas_id": "sanborn03197_002",
@@ -1867,7 +1951,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03197_002_1.jpg"
   },
   {
     "atlas_id": "sanborn08291_021",
@@ -1889,7 +1974,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08291_021_7.jpg"
   },
   {
     "atlas_id": "sanborn03170_007",
@@ -1911,7 +1997,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03170_007_6.jpg"
   },
   {
     "atlas_id": "sanborn08356_021",
@@ -1933,7 +2020,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_021_48.jpg"
   },
   {
     "atlas_id": "sanborn03222_004",
@@ -1955,7 +2043,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03222_004_4.jpg"
   },
   {
     "atlas_id": "sanborn03229_003",
@@ -1977,7 +2066,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03229_003_7.jpg"
   },
   {
     "atlas_id": "sanborn03162_006",
@@ -1999,7 +2089,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03162_006_1.jpg"
   },
   {
     "atlas_id": "sanborn08346_008",
@@ -2021,7 +2112,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08346_008_11.jpg"
   },
   {
     "atlas_id": "sanborn08356_018",
@@ -2043,7 +2135,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_018_21.jpg"
   },
   {
     "atlas_id": "sanborn08348_010",
@@ -2065,7 +2158,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_010_15.jpg"
   },
   {
     "atlas_id": "sanborn08291_015",
@@ -2087,7 +2181,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08291_015_49.jpg"
   },
   {
     "atlas_id": "sanborn03216_005",
@@ -2109,7 +2204,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03216_005_11.jpg"
   },
   {
     "atlas_id": "sanborn08348_003",
@@ -2131,7 +2227,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_003_3.jpg"
   },
   {
     "atlas_id": "sanborn08356_018",
@@ -2153,7 +2250,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08356_018_76.jpg"
   },
   {
     "atlas_id": "sanborn08331_003",
@@ -2175,7 +2273,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08331_003_28.jpg"
   },
   {
     "atlas_id": "sanborn03178_002",
@@ -2197,7 +2296,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03178_002_3.jpg"
   },
   {
     "atlas_id": "sanborn08291_021",
@@ -2219,7 +2319,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08291_021_6.jpg"
   },
   {
     "atlas_id": "sanborn03140_003",
@@ -2241,7 +2342,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03140_003_1.jpg"
   },
   {
     "atlas_id": "sanborn08332_004",
@@ -2263,7 +2365,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08332_004_2.jpg"
   },
   {
     "atlas_id": "sanborn08348_002",
@@ -2285,7 +2388,8 @@
     "sheet_reviewed": true,
     "ocr_pipeline_count": 4,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08348_002_19.jpg"
   },
   {
     "atlas_id": "sanborn08291_005",
@@ -2307,7 +2411,8 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Tennessee/data/sanborn08291_005_82.jpg"
   },
   {
     "atlas_id": "sanborn03200_004",
@@ -2329,6 +2434,7 @@
     "sheet_reviewed": false,
     "ocr_pipeline_count": 0,
     "gt_x_pct": null,
-    "gt_y_pct": null
+    "gt_y_pct": null,
+    "backup_url": "https://data.labs.loc.gov/sanborn/maps-by-state/Kentucky/data/sanborn03200_004_10.jpg"
   }
 ]
