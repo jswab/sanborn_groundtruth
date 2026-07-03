@@ -210,6 +210,14 @@ body {
 }
 .badge-new   { background: #d4edda; color: #145a2b; }
 .badge-prev  { background: #fff3cd; color: #7a5700; }
+.badge-warn  { background: #fce4cc; color: #9a4a00; }
+
+/* validation ("none_check") samples get a distinct info-strip tint so
+   reviewers can tell they're checking color-filter false negatives */
+.info-strip.band-none-check {
+  background: #ece3f5;
+  border-bottom-color: #b9a3d6;
+}
 
 /* viewer area */
 .viewer-area {
@@ -696,19 +704,34 @@ body {
   }
 
   // ── info strip ────────────────────────────────────────────
+  function colorLabel(c) {
+    const bc = c.building_color;
+    if (bc === 'none') return '⚠ no color detected';
+    if (!bc) return '—';
+    const score = c.color_score != null ? c.color_score.toFixed(3) : '—';
+    return `${bc} ${score}`;
+  }
+
   function updateInfoStrip(c) {
     const parts = [c.city, c.state, c.year].filter(Boolean);
     const loc   = parts.join(' · ') || c.atlas_id;
     const band  = (c.sample_band || '').replace('_', ' ');
     const conf  = c.confidence != null ? (c.confidence * 100).toFixed(0) + '%' : '—';
     const isNew = c.sweep_status === 'CANDIDATE_NEW_SHEET';
+    const isNoneCheck = c.sample_band === 'none_check';
+    const isNoColor   = c.building_color === 'none';
+
+    document.getElementById('info-strip').className =
+      'info-strip' + (isNoneCheck ? ' band-none-check' : '');
 
     document.getElementById('info-strip').innerHTML = `
       <span class="info-pill"><span>${loc}</span></span>
       <span class="info-pill">Sheet <span>${c.sheet_label || c.page}</span></span>
       <span class="info-pill">Confidence <span>${conf}</span></span>
       <span class="info-pill">Band <span>${band}</span></span>
+      <span class="info-pill">Color <span>${colorLabel(c)}</span></span>
       <span class="badge ${isNew ? 'badge-new' : 'badge-prev'}">${isNew ? 'new sheet' : 'reviewed sheet'}</span>
+      ${isNoColor ? '<span class="badge badge-warn">⚠ No building color</span>' : ''}
     `;
   }
 
@@ -762,6 +785,8 @@ body {
       sample_band:     c.sample_band,
       sweep_status:    c.sweep_status,
       verdict:         verdict,
+      building_color:  c.building_color || '',
+      color_score:     c.color_score != null ? c.color_score : '',
     };
 
     if (!CONFIG.googleSheetWebAppUrl) return;
